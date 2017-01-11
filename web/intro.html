@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Zac's Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+    /* Bootstrap was being fussy about an external stylesheet.  This isn't inline, so hopefully it's acceptable
+    I need to figure out how to use an external stylesheet with Bootstrap*/
+    .row.content {height: 1500px}
+    
+    /* Sets Side Nav dimensions and color */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Simple Footer */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* Css for small screens */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+    <img src="me.png" class="img-circle" alt="me" width="163" height="173"> 
+      <h3>Zac Cianflone</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+        <li><a data-toggle="pill" href="#projects">Projects</a></li>
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+    <div class="tab-content">
+    
+    <div id="home" class="tab-pane fade in active">
+    <h3><small>Welcome to Me</small></h3><hr>
+    <p>I love working with computers and programming, which is why I'm pursuing this degree online.  I find myself unable to shake an interest
+    in tech that I've had since childhood.   <br><br>  I also enjoy writing.  
+    I double majored in English and Philosophy at BYU and got a Master's in Fiction Writing at Brooklyn College.  
+    I'm writing a novel based on my dad's experience as a roadie for the funk band Parliament-Funkadelic in the 70s. <br><br> 
+    While I was attending grad school, I got a job at the Apple Store as a Mac Genius.  When I graduated, I realized that 
+    I'd also graduated with a deepened loved of computing.  I want to get a little closer to understanding how computers really work. <br> <br> 
+    I also like to ski and I've got a burgeoning interest in cooking.  My wife and I love to travel.</p>
+    
+    <h3><small>Some Photos From Recent Trips</small></h3><hr>
+    
+      <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="monkey.jpg" target="_blank">
+          <img src="monkey.jpg" alt="monkey" style="width:100%">
+          <div class="caption">
+            <p>A monkey hanging out outside our hotel room in Costa Rica</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+     <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="temple.jpg" target="_blank">
+          <img src="temple.jpg" alt="temple" style="width:100%">
+          <div class="caption">
+            <p>My wife looking at a temple in Thailand</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+     <div class="col-md-3">
+      <div class="thumbnail">
+        <a href="coast.jpg" target="_blank">
+          <img src="coast.jpg" alt="coast" style="width:100%">
+          <div class="caption">
+            <p>The Coastline in Onomichi, Japan</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+  	</div>
+    
+    
+    <div id="projects" class="tab-pane fade">
+      <h3><small>My Projects</small></h3><hr>
+      <p>Click On the Buttons Below to Take a Look at My Work<br><br>Note: This Page is a Work in Progress! The Buttons Are Disabled Until I Post My Work</p>
+      <br><br>
+      <a href="#" class="btn btn-info disabled" role="button">Project A</a>
+      <a href="#" class="btn btn-info disabled" role="button">Project B</a>
+      <a href="#" class="btn btn-info disabled" role="button">Project C</a>
+    </div>
+    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
+
+ 
