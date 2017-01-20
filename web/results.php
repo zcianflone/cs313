@@ -74,11 +74,11 @@
     	foreach ($resultsAssoc as $x => $x_value){
     	
     	if ($x != "TotVotes"){
-    	echo "<br> <br> <br>";
+    	echo "<br> <br>";
     	echo "<div class=\"progress\">";
     	echo "<div class=\"progress-bar progress-bar-success progress-bar-striped active\" role=\"progressbar\"";
     	echo "aria-valuenow=\"".$x_value."\" aria-valuemin=\"0\" aria-valuemax=\"".$resultsAssoc["TotVotes"]."\" style=\"width:".($x_value/$resultsAssoc["TotVotes"])*100 ."%\">";
-    	echo $x_value;
+    	echo $x . " : " . $x_value;
     	echo "</div>";
 		echo "</div>";
 		}
