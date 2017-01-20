@@ -76,12 +76,12 @@
     			case "macOS":
     				$macOS = fgets($resultsfile);
     			default:
-    				echo "nada";*/
+    				echo "nada";
     			
   				}
-  			}
+  			} */
   			
-  			echo "Number of votes for macOS = ". $macOS;
+  			//echo "Number of votes for macOS = ". $macOS;
     	?>
     	
  		<?php echo "OS: ".$_POST['OS'];?><br>
