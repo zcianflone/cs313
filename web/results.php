@@ -70,7 +70,7 @@
     		    	
     		switch ($current){
     			case "macOS\n":
-    				echo "macOS<br>;
+    				echo "macOS<br>";
     				break;
     			default:
     				echo "nada";
