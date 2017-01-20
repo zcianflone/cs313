@@ -68,9 +68,7 @@
     	<?php  
     	$resultsfile = fopen("results.txt", "r+") or die ("Unable to open file!");
     	
-    	while(!feof($resultsfile)) {
-  			echo fgets($resultsfile) . "<br>";
-    	?>
+    	
  		<?php echo "OS: ".$_POST['OS'];?><br>
  		<?php echo "Lang: ". $_POST["lang"]; ?>
     </div>
