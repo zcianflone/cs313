@@ -72,11 +72,11 @@
     	
     		echo fgets($resultsfile) ."<br>";
     		    	
-    		switch (fgets($resultsfile)){
+    		/*switch (fgets($resultsfile)){
     			case "macOS":
     				$macOS = fgets($resultsfile);
     			default:
-    				echo "nada";
+    				echo "nada";*/
     			
   				}
   			}
