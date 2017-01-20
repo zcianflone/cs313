@@ -68,7 +68,7 @@
     		
     		echo $current ."<br>";
     		    	
-    		switch (true){
+    		switch ($current){
     			case "macOS\n":
     				echo "macOS";
     				break;
