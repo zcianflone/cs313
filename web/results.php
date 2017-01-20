@@ -69,8 +69,17 @@
     	$resultsfile = fopen("results.txt", "r+") or die ("Unable to open file!");
     	
     	while(!feof($resultsfile)) {
-  			echo fgets($resultsfile) . "<br>";
+    	
+    		switch (fgets($resultsfile)){
+    			case "macOS":
+    				$macOS = fgets($resultsfile);
+    			default:
+    				echo "nada";
+    			
+  				}
   			}
+  			
+  			echo "Number of votes for macOS = ". $macOS;
     	?>
     	
  		<?php echo "OS: ".$_POST['OS'];?><br>
