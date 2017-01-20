@@ -65,16 +65,18 @@
     	$my_array = explode ("\n", $theData); //explodes string into array.
     	foreach ($my_array as $line)
     	{
-    		$tmp = explode(" ", $line); //cuts each line in half.
+    		$tmp = explode("@", $line); //cuts each line in half.
     		$resultsAssoc[$tmp[0]] = $tmp[1]; //creates associative array.  key is name and value is how many votes.
     	}
     	
     	fclose ($fh);
     	
-    	echo "<h2>Survey Results<h2><hr><br>";
+    	echo "<h2>Survey Results<h2><hr>";
     	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"];
     	
     	foreach ($resultsAssoc as $x => $x_value){
+    	
+    	//category name will have value of -1.  when we hit that value, we change the progress bar color and output the header
     	
     	if ($x != "TotVotes"){
     	echo "<br> <br>";
