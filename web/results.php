@@ -78,7 +78,7 @@
     	
     	//category name will have value of -1.  when we hit that value, we change the progress bar color and output the header
     	
-    	if ($x_value == -1){
+    	if ($x_value == "-1"){
     	echo "<h3><small>" . $x . "</small></h3><hr>";
     	
     	{
