@@ -61,9 +61,9 @@
     	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r'); //opening file
     	$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
-    	/*$resultsAssoc = array ();
+    	$resultsAssoc = array ();
     	$my_array = explode ("\n", $resultsAssoc); //explodes string into array.
-    	foreach ($my_array as line)
+    	foreach ($my_array as $line)
     	{
     		$tmp = explode(" ", $line); //cuts each line in half.
     		$resultsAssoc[$tmp[0]] = $tmp[1]; //creates associative array.  key is name and value is how many votes.
