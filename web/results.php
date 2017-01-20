@@ -70,15 +70,15 @@
     	
     	while(!feof($resultsfile)) {
     	
-    		echo fgets($resultsfile) ."<br>";
+    		//echo fgets($resultsfile) ."<br>";
     		    	
-    		/*switch (fgets($resultsfile)){
+    		switch (fgets($resultsfile)){
     			case "macOS":
-    				$macOS = fgets($resultsfile);
+    				echo "macOS";
     			default:
     				echo "nada";
     			
-  				}*/
+  				}
   			} 
   			
   			//echo "Number of votes for macOS = ". $macOS;
