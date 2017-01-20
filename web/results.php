@@ -70,6 +70,8 @@
     	
     	while(!feof($resultsfile)) {
     	
+    		echo fgets($resultsfile) ."<br>";
+    		    	
     		switch (fgets($resultsfile)){
     			case "macOS":
     				$macOS = fgets($resultsfile);
