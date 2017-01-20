@@ -74,8 +74,8 @@
     		
     		$current = fgets($resultsfile);
     		    	
-    		switch ($current){
-    			case macOS:
+    		switch (true){
+    			case strisstr($current, "macOS"):
     				echo "macOS";
     				break;
     			default:
