@@ -71,14 +71,18 @@
     	
     	fclose ($fh);
     	
+    	echo "<h1>Survey Results<h1><hr><br>";
+    	echo "<h2>Total Number of Votes:". $resultsAssoc["TotVotes"];
+    	
     	foreach ($resultsAssoc as $x => $x_value){
     	
     	if ($x != "TotVotes"){
     	echo "<br> <br>";
+    	echo $x_value;
     	echo "<div class=\"progress\">";
     	echo "<div class=\"progress-bar progress-bar-success progress-bar-striped active\" role=\"progressbar\"";
     	echo "aria-valuenow=\"".$x_value."\" aria-valuemin=\"0\" aria-valuemax=\"".$resultsAssoc["TotVotes"]."\" style=\"width:".($x_value/$resultsAssoc["TotVotes"])*100 ."%\">";
-    	echo $x . " : " . $x_value;
+    	echo $x;
     	echo "</div>";
 		echo "</div>";
 		}
