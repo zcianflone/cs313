@@ -71,7 +71,12 @@
     	
     	fclose ($fh);
     	
-    	echo "macOS votes = ". $resultsAssoc['macOS'];
+    	foreach($resultsAssoc as $x => $x_value) {
+    			echo "Key=" . $x . ", Value=" . $x_value;
+    			echo "<br>";
+			}
+    	
+    	//echo "macOS votes = ". $resultsAssoc['macOS'];
     	
     	//fopen("results.txt", "r+") or die ("Unable to open file!");
     	
