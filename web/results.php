@@ -67,7 +67,6 @@
     		$current = fgets($resultsfile);
     		
     		echo $current ."<br>";
-    		}
     		    	
     		/*switch (true){
     			case "macOS":
