@@ -66,11 +66,11 @@
     		
     		$current = fgets($resultsfile);
     		
-    		echo $current ."<br>";
+    		//echo $current ."<br>";
     		    	
     		switch ($current){
     			case "macOS\n":
-    				echo "macOS";
+    				echo "macOS<br>;
     				break;
     			default:
     				echo "nada";
