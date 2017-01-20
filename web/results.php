@@ -1,11 +1,3 @@
-<html>
-<body>
-
-
-
-</body>
-</html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,15 +65,19 @@
     		//echo fgets($resultsfile) ."<br>";
     		
     		$current = fgets($resultsfile);
+    		
+    		if ($current == "macOS"){
+    			echo "macOS";
+    		}
     		    	
-    		switch (true){
-    			case strisstr($current, "macOS"):
+    		/*switch (true){
+    			case "macOS":
     				echo "macOS";
     				break;
     			default:
     				echo "nada";
     			
-  				}
+  				}*/
   			} 
   			
   			//echo "Number of votes for macOS = ". $macOS;
