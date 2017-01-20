@@ -1,11 +1,11 @@
 macOS 10
 Windows 2
-Linux 3
+Linux 7
 ChromeOS 1
 C++ 1
 Java 4
-JavaScript 3
+JavaScript 7
 PHP 5
 Pascal 1
 Fortran 2
-TotVotes 16
+TotVotes 20
