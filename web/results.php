@@ -80,10 +80,9 @@
     	
     	if ($x_value == "-1"){
     	echo "<h3><small>" . $x . "</small></h3><hr>";
+    	}
     	
-    	{
-    	
-    	if ($x != "TotVotes"){
+    	else if ($x != "TotVotes"){
     	echo "<br> <br>";
     	echo "<h4><small>" . $x . "</small></h4>";
     	echo "<div class=\"progress\">";
