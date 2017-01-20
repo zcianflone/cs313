@@ -78,6 +78,11 @@
     	
     	//category name will have value of -1.  when we hit that value, we change the progress bar color and output the header
     	
+    	if ($x_value == -1){
+    	echo echo "<h3><small>" . $x . "</small></h3><hr>";
+    	
+    	{
+    	
     	if ($x != "TotVotes"){
     	echo "<br> <br>";
     	echo "<h4><small>" . $x . "</small></h4>";
