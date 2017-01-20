@@ -1,0 +1,4 @@
+macOS 10
+Windows 2
+Linux 8
+ChromeOS 1
