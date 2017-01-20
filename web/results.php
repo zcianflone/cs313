@@ -66,8 +66,7 @@
     		
     		$current = fgets($resultsfile);
     		
-    		if ($current == "macOS"){
-    			echo "macOS";
+    		echo $current ."<br>";
     		}
     		    	
     		/*switch (true){
