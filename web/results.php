@@ -71,37 +71,22 @@
     	
     	fclose ($fh);
     	
-    	foreach($resultsAssoc as $x => $x_value) {
-    			echo "Key=" . $x . ", Value=" . $x_value;
-    			echo "<br>";
-			}
-    	
-    	echo "macOS votes = ". $resultsAssoc['macOS'];
-    	
-    	//fopen("results.txt", "r+") or die ("Unable to open file!");
+    	echo "<div class=\"progress\">";
+    	echo "<div class=\"progress-bar progress-bar-success progress-bar-striped active\" role=\"progressbar\"";
+    	echo "aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:40%\">";
+    	echo "40% Complete (success)";
+    	echo "</div>";
+		echo "</div>";
     	
     	
-    	
-    	/*while(!feof($resultsfile)) {
-    	
-    		//echo fgets($resultsfile) ."<br>";
-    		
-    		$current = fgets($resultsfile);
-    		
-    		//echo $current ."<br>";
-    		    	
-    		switch ($current){
-    			case "macOS\n":
-    				echo "macOS<br>"	;
-    				break;
-    			default:
-    				echo "nada";
-    			
-  				}
-  			} */
-  			
-  			//echo "Number of votes for macOS = ". $macOS;
     	?>
+    	
+    
+  
+  
+    
+ 
+    	
     	
  		<?php echo "OS: ".$_POST['OS'];?><br>
  		<?php echo "Lang: ". $_POST["lang"]; ?>
