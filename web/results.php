@@ -92,8 +92,8 @@
     			default:
     				echo "nada";
     			
-  				}*/
-  			} 
+  				}
+  			} */
   			
   			//echo "Number of votes for macOS = ". $macOS;
     	?>
