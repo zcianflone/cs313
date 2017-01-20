@@ -83,7 +83,6 @@
     	}
     	
     	else if ($x != "TotVotes"){
-    	echo "<br> <br>";
     	echo "<h4><small>" . $x . "</small></h4>";
     	echo "<div class=\"progress\">";
     	echo "<div class=\"progress-bar progress-bar-success progress-bar-striped active\" role=\"progressbar\"";
@@ -91,6 +90,7 @@
     	echo $x_value;
     	echo "</div>";
 		echo "</div>";
+		echo "<br> <br>";
 		}
 		
 		}
