@@ -68,14 +68,14 @@
     		
     		echo $current ."<br>";
     		    	
-    		/*switch (true){
-    			case "macOS":
+    		switch (true){
+    			case "macOS\n":
     				echo "macOS";
     				break;
     			default:
     				echo "nada";
     			
-  				}*/
+  				}
   			} 
   			
   			//echo "Number of votes for macOS = ". $macOS;
