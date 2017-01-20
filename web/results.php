@@ -76,7 +76,7 @@
     			echo "<br>";
 			}
     	
-    	//echo "macOS votes = ". $resultsAssoc['macOS'];
+    	echo "macOS votes = ". $resultsAssoc['macOS'];
     	
     	//fopen("results.txt", "r+") or die ("Unable to open file!");
     	
