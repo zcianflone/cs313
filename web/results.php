@@ -64,7 +64,7 @@
   	</div>
     
     
-    <div id="results" class="tab-pane fade">
+    <div id="results" class="tab-pane fade in active">
  		<?php echo "OS: ".$_POST['OS'];?><br>
  		<?php echo "Lang: ". $_POST["lang"]; ?>
     </div>
