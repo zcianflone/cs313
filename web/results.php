@@ -75,6 +75,7 @@
     		switch (fgets($resultsfile)){
     			case "macOS":
     				echo "macOS";
+    				break;
     			default:
     				echo "nada";
     			
