@@ -61,7 +61,7 @@
     	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r'); //opening file
     	$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
-    	$resultsAssoc = array ();
+    	/*$resultsAssoc = array ();
     	$my_array = explode ("\n", $resultsAssoc); //explodes string into array.
     	foreach ($my_array as line)
     	{
