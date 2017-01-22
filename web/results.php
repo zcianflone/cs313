@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-$_SESSION["voted"] = true;
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +113,7 @@ $_SESSION["voted"] = true;
     			
     	}*/
     	
-    	
+    	$_SESSION["voted"] = true;
     	
     	echo "<h2>Results<h2><hr>";
     	$resultsAssoc["TotVotes"]++;
