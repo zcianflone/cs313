@@ -67,6 +67,11 @@
     	{
     		$tmp = explode("@", $line); //cuts each line in half.
     		$resultsAssoc[$tmp[0]] = $tmp[1]; //creates associative array.  key is name and value is how many votes.
+    		
+    		if ($resultsAssoc[$tmp[0]] == $_POST['OS']){
+    			$resultsAssoc[$tmp[0]] = $tmp[1]++;
+    		}
+    			
     	}
     	
     	fclose ($fh);
