@@ -157,7 +157,7 @@
 		
 		
 		
-	
+		var_dump($resultsAssoc);
 		
 		$jsonStringNew = json_encode($resultsAssoc);
 		
