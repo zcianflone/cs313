@@ -61,11 +61,12 @@
     
     <div id="results">
     	<?php  
-    	$resultsFile = "results.txt";
+    	$resultsFile = "newresults.txt";
     	$fh = fopen($resultsFile, 'r+'); //opening file
     	$jsonString = fread ($fh, filesize($resultsFile)); //makes a big string out of file
     	$resultsAssoc = array ();
     	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
+    	fclose($fh);
     	
     	
     	/*$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
@@ -162,6 +163,7 @@
 		$jsonStringNew = json_encode($resultsAssoc);
 		
 		fwrite($fp, $jsonStringNew) or die ('fwrite failed');
+		fclose($fp);
 		
 		
 
