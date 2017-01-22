@@ -62,7 +62,7 @@
     <div id="results">
     	<?php  
     	$resultsFile = "results.txt";
-    	$fh = fopen($resultsFile, 'r'); //opening file
+    	$fh = fopen($resultsFile, 'r+'); //opening file
     	$jsonString = fread ($fh, filesize($resultsFile)); //makes a big string out of file
     	$resultsAssoc = array ();
     	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
@@ -107,7 +107,7 @@
     			
     	}*/
     	
-    	fclose ($fh);
+    	
     	
     	echo "<h2>Results<h2><hr>";
     	$resultsAssoc["TotVotes"]++;
@@ -155,15 +155,13 @@
 		}
 		
 		
-		delete($resultsFile);
 		
-		$newFile = fopen("jsonresults.txt", "w") or die ("Unable to open file!");
+		
+	
 		
 		$jsonStringNew = json_encode($resultsAssoc);
 		
-		fwrite($newFile, $jsonStringNew);
-		
-		fclose ($newFile);
+		file_put_contents($fh, $jsonStringNew);
 		
 		
 
