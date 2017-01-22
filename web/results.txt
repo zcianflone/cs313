@@ -1,3 +1,4 @@
+TotVotes@20
 OS Preference@-1
 macOS@10
 Windows@2
@@ -10,4 +11,3 @@ JavaScript@7
 PHP@5
 Pascal@1
 Fortran@2
-TotVotes@20

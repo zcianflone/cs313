@@ -68,13 +68,19 @@
     		$tmp = explode("@", $line); //cuts each line in half.
     		$resultsAssoc[$tmp[0]] = (int)$tmp[1]; //creates associative array.  key is name and value is how many votes.
     		
-    		
+    		//when we get to the option that the user voted for, we increment the vote count/value
     		if ($tmp[0] == $_POST['OS']){
     			(int)($tmp[1]++); //if I try to increment on the next line, it's not working. not sure why.  something with order of operations in php?
     			$resultsAssoc[$tmp[0]] = $tmp[1];
     		}
     		
+    		//again for each question
     		if ($tmp[0] == $_POST['lang']){
+    			(int)($tmp[1]++);
+    			$resultsAssoc[$tmp[0]] = $tmp[1];
+    		}
+    		
+    		if ($tmp[0] == "TotVotes"){
     			(int)($tmp[1]++);
     			$resultsAssoc[$tmp[0]] = $tmp[1];
     		}
