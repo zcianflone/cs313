@@ -71,6 +71,7 @@
     		
     		if ($tmp[0] == $_POST['OS']){
     			var_dump($resultsAssoc);
+    			(int)($tmp[1]++);
     			$resultsAssoc[$tmp[0]] = (int)($tmp[1]++);
     			var_dump($resultsAssoc);
     			echo "Over here!". $resultsAssoc[$tmp[0]] = $tmp[1];
