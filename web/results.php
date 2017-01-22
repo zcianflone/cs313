@@ -155,7 +155,7 @@
 		}
 		
 		
-		echo delete($resultsFile);
+		delete($resultsFile);
 		
 		/*$newFile = fopen("results.txt", "w") or die ("Unable to open file!");
 		
