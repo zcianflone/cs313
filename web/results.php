@@ -69,12 +69,10 @@
     		$resultsAssoc[$tmp[0]] = $tmp[1]; //creates associative array.  key is name and value is how many votes.
     		
     		
-    		if ($tmp[0] == $_POST['OS']){
+    		if ($tmp[0] == $_POST['OS'] || $_POST["lang"] ){ //if current key/choice matches the radio button the user selected (i.e. the vote) the num of votes increments in the AssocArray
     			$resultsAssoc[$tmp[0]] = $tmp[1]++;
-    			
-    			echo "Over here!". $resultsAssoc[$tmp[0]] = $tmp[1]++;
     		}
-    			
+    		
     	}
     	
     	fclose ($fh);
