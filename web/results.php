@@ -38,16 +38,6 @@
 </head>
 <body>
 
-<div class="container-fluid fill">
-  <div class="row content fill">
-    <div class="col-sm-3 sidenav fill">
-    <br> 
-      <h3>Survey</h3>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a data-toggle="pill" href="#questions">Questions</a></li>
-        <li class="active"><a data-toggle="pill" href="#results">Results</a></li>
-      </ul><br>
-    </div>
 
     <div class="col-sm-9">
     <div class="tab-content">
@@ -56,7 +46,7 @@
   	</div>
     
     
-    <div id="results" class="tab-pane fade in active">
+    <div id="results">
     	<?php  
     	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r'); //opening file
@@ -128,6 +118,18 @@
     	?>
     </div>
     </div>
+    
+    <div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+    <br> 
+      <h3>Survey</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a data-toggle="pill" href="#questions">Questions</a></li>
+        <li class="active"><a data-toggle="pill" href="#results">Results</a></li>
+      </ul><br>
+    </div>
+
             </div>
           </div>
         </div>
