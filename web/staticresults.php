@@ -1,6 +1,6 @@
 
     	<?php  
-    	$resultsFile = "results.txt";
+    	/*$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r'); //opening file
     	$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
     	$resultsAssoc = array ();
@@ -12,7 +12,15 @@
     			
     	}
     	
-    	fclose ($fh);
+    	fclose ($fh);*/
+    	
+    	$resultsFile = "results.txt";
+    	$fh = fopen($resultsFile, 'r+'); //opening file
+    	$jsonString = fread ($fh, filesize($resultsFile)); //makes a big string out of file
+    	$resultsAssoc = array ();
+    	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
+    	fclose($fh);
+    	
     	
     	echo "<h2>Survey Results<h2><hr>";
     	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"]."<h3>";
