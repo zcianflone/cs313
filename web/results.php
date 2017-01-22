@@ -157,15 +157,12 @@
 		
 		//delete($resultsFile);
 		
-		//$newFile = fopen("newresults.txt", "w");
+		$newFile = fopen("newresults.txt", "w");
 		
 		$jsonstring = json_encode($resultsAssoc);
 		
-		echo $jsonstring;
+		fwrite($newFile, $jsonstring);
 		
-		$newarray = json_decode($jsonstring, true);
-		
-		var_dump($newarray);
 		
 
     	
