@@ -70,13 +70,13 @@
     		
     		
     		if ($tmp[0] == $_POST['OS']){
-    			var_dump($resultsAssoc);
+    			(int)($tmp[1]++); //if I try to increment on the next line, it's not working. not sure why.  something with order of operations in php?
+    			$resultsAssoc[$tmp[0]] = $tmp[1];
+    		}
+    		
+    		if ($tmp[0] == $_POST['lang']){
     			(int)($tmp[1]++);
     			$resultsAssoc[$tmp[0]] = $tmp[1];
-    			var_dump($resultsAssoc);
-    			echo "Over here!". $resultsAssoc[$tmp[0]];
-    			var_dump($resultsAssoc);
-    			echo "Again".$resultsAssoc[$tmp[0]];
     		}
     			
     	}
