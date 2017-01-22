@@ -65,7 +65,7 @@ session_start();
     
     <div id="results">
     	<?php  
-    	$_SESSION["voted"] = true;
+    	$_SESSION["voted"];
     	
     	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r+'); //opening file
@@ -74,11 +74,16 @@ session_start();
     	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
     	fclose($fh);
     	echo "<h2>Results<h2><hr>";
+    	if(!isset($_SESSION["voted"])
+    	{
     	$resultsAssoc["TotVotes"]++;
     	$resultsAssoc[$_POST['OS']]++;
     	$resultsAssoc[$_POST['lang']]++;
     	$resultsAssoc[$_POST['beatle']]++;
     	$resultsAssoc[$_POST['starwars']]++;
+    	$_SESSION["voted"] = true;
+    	}
+    	
     	
     	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"]."<h3>";
     	
