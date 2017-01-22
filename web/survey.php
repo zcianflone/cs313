@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION["voted"])) {
+if($_SESSION["voted"]) {
     header("Location: http://agile-forest-80945.herokuapp.com/results.php");
     exit;
 }
