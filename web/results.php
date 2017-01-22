@@ -68,19 +68,18 @@
     		$tmp = explode("@", $line); //cuts each line in half.
     		$resultsAssoc[$tmp[0]] = $tmp[1]; //creates associative array.  key is name and value is how many votes.
     		
-    		//if current key/choice matches the radio button the user selected (i.e. the vote) the num of votes increments in the AssocArray
-    		if ($tmp[0] == $_POST['OS']){ 
+    		
+    		if ($tmp[0] == $_POST['OS']){
     			$resultsAssoc[$tmp[0]] = $tmp[1]++;
+    			echo "Over here!". $resultsAssoc[$tmp[0]] = $tmp[1]++;
     		}
-    		
-    		
-    		
+    			
     	}
     	
     	fclose ($fh);
     	
     	echo "<h2>Survey Results<h2><hr>";
-    	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"]++;
+    	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"];
     	
     	foreach ($resultsAssoc as $x => $x_value){
     	
