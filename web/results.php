@@ -38,9 +38,9 @@
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav">
+<div class="container-fluid fill">
+  <div class="row content fill">
+    <div class="col-sm-3 sidenav fill">
     <br> 
       <h3>Survey</h3>
       <ul class="nav nav-pills nav-stacked">
