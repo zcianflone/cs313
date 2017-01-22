@@ -38,8 +38,8 @@
 </head>
 <body>
 
-<!--<div class="container-fluid">
-  <div class="row content">
+<div class="container-fluid">
+  <!--<div class="row content">
     <div class="col-sm-3 sidenav">
     <br> 
       <h3>Survey</h3>
