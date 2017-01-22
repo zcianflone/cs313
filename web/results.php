@@ -16,7 +16,7 @@
     /* Sets Side Nav dimensions and color */
     .sidenav {
       background-color: #f1f1f1;
-      height: 100%;
+      /*height: 100%;*/
     }
     
     /* Simple Footer */
@@ -39,7 +39,7 @@
 <body>
 
 <div class="container-fluid">
-  <!--<div class="row content">
+  <div class="row content">
     <div class="col-sm-3 sidenav">
     <br> 
       <h3>Survey</h3>
@@ -47,7 +47,10 @@
         <li><a data-toggle="pill" href="#questions">Questions</a></li>
         <li class="active"><a data-toggle="pill" href="#results">Results</a></li>
       </ul><br>
-    </div>>--!>
+    </div>
+    
+     
+    
 
     <div class="col-sm-9">
     <div class="tab-content">
