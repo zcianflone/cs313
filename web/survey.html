@@ -36,7 +36,21 @@
     }
   </style>
 </head>
-<body>
+<body onload="loadResults()">
+
+<script>
+function loadResults() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("results").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "results.txt", true);
+  xhttp.send();
+}
+</script>
 
 <div class="container-fluid">
   <div class="row content">
@@ -134,16 +148,8 @@
     
     
     <div id="results" class="tab-pane fade">
-      <h3><small>My Projects</small></h3><hr>
-      <p>Click On the Buttons Below to Take a Look at My Work<br><br>Note: This Page is a Work in Progress! The Buttons Are Disabled Until I Post My Work</p>
-      <br><br>
-      <a href="#" class="btn btn-info disabled" role="button">Project A</a>
-      <a href="#" class="btn btn-info disabled" role="button">Project B</a>
-      <a href="#" class="btn btn-info disabled" role="button">Project C</a>
-      <br>
-      <br>
-      <br>
-      <br>
+    
+  
     </div>
     </div>
             </div>
