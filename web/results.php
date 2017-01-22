@@ -60,10 +60,15 @@ session_start();
     <div class="tab-content">
     
     <div id="questions" class="tab-pane fade in">
-    <h2>You've already voted! (Note: In order to see the session redirect in action, try to reload /survey.php)<h2>  	
+    
+    
+    <div class="alert alert-info">
+  <strong>You've Already Voted!</strong> (Note: In order to see the session redirect in action, try to reload /survey.php)
+</div>
+     	
     
     </div>
-    </div>
+    
     
     
     <div id="results">
