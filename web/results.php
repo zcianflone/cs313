@@ -80,6 +80,7 @@
     			$resultsAssoc[$tmp[0]] = $tmp[1];
     		}
     		
+    		//increments total vote count once.  assumes only one vote per submission
     		if ($tmp[0] == "TotVotes"){
     			(int)($tmp[1]++);
     			$resultsAssoc[$tmp[0]] = $tmp[1];
@@ -113,18 +114,9 @@
 		
 		}
     	
+    	var_dump ($resultsAssoc);
     	
     	?>
-    	
-    
-  
-  
-    
- 
-    	
-    	
- 		<?php echo "OS: ".$_POST['OS'];?><br>
- 		<?php echo "Lang: ". $_POST["lang"]; ?>
     </div>
     </div>
             </div>
