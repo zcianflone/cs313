@@ -155,7 +155,7 @@
 		}
 		
 		
-		$fp = fopen("results.txt", 'w+') or die ('failed'); //opening file
+		/*$fp = fopen("results.txt", 'w+') or die ('failed'); //opening file
 		
 		//var_dump($resultsAssoc);
 		
@@ -163,7 +163,7 @@
 		
 		fwrite($fp, $jsonStringNew) or die ('fwrite failed');
 		
-		fclose($fp);
+		fclose($fp);*/
 
 		
 		
