@@ -155,13 +155,15 @@
 		}
 		
 		
-		//delete($resultsFile);
+		delete($resultsFile);
 		
-		$newFile = fopen("newresults.txt", "w");
+		$newFile = fopen("results.txt", "w") or die ("Unable to open file!")
 		
 		$jsonstring = json_encode($resultsAssoc);
 		
 		fwrite($newFile, $jsonstring);
+		
+		fclose ($newFile);
 		
 		
 
