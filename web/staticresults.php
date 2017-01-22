@@ -15,7 +15,7 @@
     	fclose ($fh);
     	
     	echo "<h2>Survey Results<h2><hr>";
-    	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"];
+    	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"]."<h3>";
     	
     	foreach ($resultsAssoc as $x => $x_value){
     	
