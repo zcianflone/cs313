@@ -76,6 +76,8 @@ function loadResults() {
     <div class="tab-content">
     
     
+    
+    
     <div id="questions" class="tab-pane fade in active">
     <form action="results.php" method="post">
     <h3><small>OS Preference</small></h3><hr>

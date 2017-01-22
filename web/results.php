@@ -59,8 +59,9 @@ session_start();
     <div class="col-sm-9">
     <div class="tab-content">
     
-    
-  	</div>
+    <div id="questions" class="tab-pane fade in">
+    <h2>You've already voted! (Note: In order to see the session redirect in action, try to reload /survey.php)<h2>  	
+    </div>
     
     
     <div id="results">
