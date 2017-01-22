@@ -155,13 +155,13 @@
 		}
 		
 		
+		$fp = fopen("newresults.txt", 'w+') or die ('failed'); //opening file
 		
-		
-		var_dump($resultsAssoc);
+		//var_dump($resultsAssoc);
 		
 		$jsonStringNew = json_encode($resultsAssoc);
 		
-		file_put_contents($fh, $jsonStringNew);
+		fwrite($fp, $jsonStringNew) or die ('fwrite failed');
 		
 		
 
