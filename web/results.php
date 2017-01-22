@@ -113,8 +113,7 @@
 		}
 		
 		}
-    	
-    	var_dump ($resultsAssoc);
+
     	
     	?>
     </div>
