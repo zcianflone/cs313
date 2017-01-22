@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -66,55 +65,14 @@ session_start();
     
     <div id="results">
     	<?php  
+    	$_SESSION["voted"] = true;
+    	
     	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r+'); //opening file
     	$jsonString = fread ($fh, filesize($resultsFile)); //makes a big string out of file
     	$resultsAssoc = array ();
     	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
     	fclose($fh);
-    	
-    	
-    	/*$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
-    	$resultsAssoc = array ();
-    	$my_array = explode ("\n", $theData); //explodes string into array.*/
-    	
-    	/*foreach ($my_array as $line)
-    	{
-    		$tmp = explode("@", $line); //cuts each line in half.
-    		$resultsAssoc[$tmp[0]] = (int)$tmp[1]; //creates associative array.  key is name and value is how many votes.
-    		
-    		//when we get to the option that the user voted for, we increment the vote count/value
-    		if ($tmp[0] == $_POST['OS']){
-    			(int)($tmp[1]++); //if I try to increment on the next line, it's not working. not sure why.  something with order of operations in php?
-    			$resultsAssoc[$tmp[0]] = $tmp[1];
-    		}
-    		
-    		//again for each question
-    		if ($tmp[0] == $_POST['lang']){
-    			(int)($tmp[1]++);
-    			$resultsAssoc[$tmp[0]] = $tmp[1];
-    		}
-    		
-    		if ($tmp[0] == $_POST['beatle']){
-    			(int)($tmp[1]++);
-    			$resultsAssoc[$tmp[0]] = $tmp[1];
-    		}
-    		
-    		if ($tmp[0] == $_POST['starwars']){
-    			(int)($tmp[1]++);
-    			$resultsAssoc[$tmp[0]] = $tmp[1];
-    		}
-    		
-    		//increments total vote count once.  assumes only one vote per submission
-    		if ($tmp[0] == "TotVotes"){
-    			(int)($tmp[1]++);
-    			$resultsAssoc[$tmp[0]] = $tmp[1];
-    		}
-    			
-    	}*/
-    	
-    	$_SESSION["voted"] = true;
-    	
     	echo "<h2>Results<h2><hr>";
     	$resultsAssoc["TotVotes"]++;
     	$resultsAssoc[$_POST['OS']]++;
