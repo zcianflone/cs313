@@ -149,8 +149,13 @@
 		
 		//$newFile = fopen("newresults.txt", "w");
 		
+		$jsonstring = json_encode($resultsAssoc);
 		
-		echo json_encode($resultsAssoc);
+		echo $jsonstring;
+		
+		$newarray = json_decode($jsonstring, true);
+		
+		var_dump($newarray);
 		
 
     	
