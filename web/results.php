@@ -72,6 +72,7 @@
     		if ($tmp[0] == $_POST['OS']){
     			$resultsAssoc[$tmp[0]] = $tmp[1]++;
     			echo "Over here!". $resultsAssoc[$tmp[0]] = $tmp[1];
+    			echo "Again".$resultsAssoc[$tmp[0]];
     		}
     			
     	}
