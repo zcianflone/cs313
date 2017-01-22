@@ -121,7 +121,7 @@
     		
     			echo "<h4><small>" . $x . "</small></h4>";
     			echo "<div class=\"progress\">";
-    			echo "<div class=\"progress-bar progress-bar-warning progress-bar-striped active\" role=\"progressbar\"";
+    			echo "<div class=\"progress-bar progress-bar-info progress-bar-striped active\" role=\"progressbar\"";
     			echo "aria-valuenow=\"".$x_value."\" aria-valuemin=\"0\" aria-valuemax=\"".$resultsAssoc["TotVotes"]."\" style=\"width:".($x_value/$resultsAssoc["TotVotes"])*100 ."%\">";
     			echo $x_value;
     			echo "</div>";
@@ -133,7 +133,7 @@
     		
 				echo "<h4><small>" . $x . "</small></h4>";
     			echo "<div class=\"progress\">";
-    			echo "<div class=\"progress-bar progress-bar-success progress-bar-striped active\" role=\"progressbar\"";
+    			echo "<div class=\"progress-bar progress-bar-success progress-bar-striped\" role=\"progressbar\"";
     			echo "aria-valuenow=\"".$x_value."\" aria-valuemin=\"0\" aria-valuemax=\"".$resultsAssoc["TotVotes"]."\" style=\"width:".($x_value/$resultsAssoc["TotVotes"])*100 ."%\">";
     			echo $x_value;
     			echo "</div>";
