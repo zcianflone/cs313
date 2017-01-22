@@ -80,6 +80,16 @@
     			$resultsAssoc[$tmp[0]] = $tmp[1];
     		}
     		
+    		if ($tmp[0] == $_POST['beatle']){
+    			(int)($tmp[1]++);
+    			$resultsAssoc[$tmp[0]] = $tmp[1];
+    		}
+    		
+    		if ($tmp[0] == $_POST['starwars']){
+    			(int)($tmp[1]++);
+    			$resultsAssoc[$tmp[0]] = $tmp[1];
+    		}
+    		
     		//increments total vote count once.  assumes only one vote per submission
     		if ($tmp[0] == "TotVotes"){
     			(int)($tmp[1]++);

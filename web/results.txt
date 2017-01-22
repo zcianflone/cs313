@@ -11,3 +11,12 @@ JavaScript@7
 PHP@5
 Pascal@1
 Fortran@2
+Favorite Beatle@-1
+John@7
+Ringo@2
+Paul@7
+George@4
+Favorite Original Trilogy Star Wars Movie@-1
+A New Hope@5
+Empire Strikes Back@10
+Return of the Jedi@5
