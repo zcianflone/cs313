@@ -157,7 +157,7 @@
 		
 		delete($resultsFile);
 		
-		$newFile = fopen("results.txt", "w") or die ("Unable to open file!");
+		$newFile = fopen("jsonresults.txt", "w") or die ("Unable to open file!");
 		
 		$jsonStringNew = json_encode($resultsAssoc);
 		
