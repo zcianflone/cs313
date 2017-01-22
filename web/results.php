@@ -158,11 +158,9 @@
 		
 		$fp = fopen("results.txt", 'w+') or die ('failed'); //opening file
 		
-		var_dump($resultsAssoc);
 		
 		$jsonStringNew = json_encode($resultsAssoc);
 		
-		var_dump($jsonStringNew);
 		
 		fwrite($fp, $jsonStringNew) or die ('fwrite failed');
 		
