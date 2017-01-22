@@ -61,7 +61,7 @@
     
     <div id="results">
     	<?php  
-    	$resultsFile = "newresults.txt";
+    	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r+'); //opening file
     	$jsonString = fread ($fh, filesize($resultsFile)); //makes a big string out of file
     	$resultsAssoc = array ();
