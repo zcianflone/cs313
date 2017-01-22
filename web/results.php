@@ -111,6 +111,11 @@
     	
     	echo "<h2>Results<h2><hr>";
     	$resultsAssoc["TotVotes"]++;
+    	$resultsAssoc[$_POST['OS']]++;
+    	$resultsAssoc[$_POST['lang']]++;
+    	$resultsAssoc[$_POST['beatle']]++;
+    	$resultsAssoc[$_POST['starwars']]++;
+    	
     	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"]."<h3>";
     	
     	foreach ($resultsAssoc as $x => $x_value){
