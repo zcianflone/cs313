@@ -74,7 +74,7 @@ session_start();
     	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
     	fclose($fh);
     	echo "<h2>Results<h2><hr>";
-    	if(!isset($_SESSION["voted"])
+    	if(!isset($_SESSION["voted"]))
     	{
     	$resultsAssoc["TotVotes"]++;
     	$resultsAssoc[$_POST['OS']]++;
