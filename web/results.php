@@ -63,10 +63,16 @@
     	<?php  
     	$resultsFile = "results.txt";
     	$fh = fopen($resultsFile, 'r'); //opening file
-    	$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
+    	$jsonString = fread ($fh, filesize($resultsFile)); //makes a big string out of file
     	$resultsAssoc = array ();
-    	$my_array = explode ("\n", $theData); //explodes string into array.
-    	foreach ($my_array as $line)
+    	$resultsAssoc = json_decode($jsonString, true); //turning jsonString in AssocArray
+    	
+    	
+    	/*$theData = fread ($fh, filesize($resultsFile)); //makes a big string out of file
+    	$resultsAssoc = array ();
+    	$my_array = explode ("\n", $theData); //explodes string into array.*/
+    	
+    	/*foreach ($my_array as $line)
     	{
     		$tmp = explode("@", $line); //cuts each line in half.
     		$resultsAssoc[$tmp[0]] = (int)$tmp[1]; //creates associative array.  key is name and value is how many votes.
@@ -99,7 +105,7 @@
     			$resultsAssoc[$tmp[0]] = $tmp[1];
     		}
     			
-    	}
+    	}*/
     	
     	fclose ($fh);
     	
@@ -107,8 +113,6 @@
     	echo "<h3><small>Total Number of Votes: </small>". $resultsAssoc["TotVotes"]."<h3>";
     	
     	foreach ($resultsAssoc as $x => $x_value){
-    	
-    	//category name will have value of -1.  when we hit that value, we change the progress bar color and output the header
     	
     	if ($x_value == "-1"){
     	echo "<h3><small>" . $x . "</small></h3><hr>";
