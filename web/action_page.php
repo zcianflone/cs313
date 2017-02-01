@@ -21,6 +21,20 @@ $dbName = ltrim($dbopts["path"],'/');
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 echo "item: " . $_POST["desireditem"];
+echo '<br/>';
+
+foreach ($db->query('SELECT name, quantity FROM item') as $row)
+{
+	if ($row["name"] == $_POST["desireditem"]){
+		echo "quantity: " . $row["quantity"];
+		echo '<br/>';
+	}
+	
+	else {
+		echo "quantity: " . $row["quantity"];
+	}
+	
+}
 
 
 ?>
