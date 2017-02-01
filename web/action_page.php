@@ -1,6 +1,6 @@
 
 <html>
- <title>Pantry</title>
+ <title>Pantry Action</title>
   <meta charset="utf-8">
 
 <head></head>
@@ -20,22 +20,10 @@ $dbName = ltrim($dbopts["path"],'/');
 
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-foreach ($db->query('SELECT name FROM item') as $row)
-{
-	echo 'item name:'. $row['name'];
-	echo '<br/>';
-}
-?>
+echo "item: " . $_POST["desireditem"];
 
-<form action="action_page.php" method="post">
-  <br>
-  <br>
-  Search:<br>
-  <input type="text" name="desireditem">
-  <br>
-  <br>
-  <input type="submit" value="Submit">
-</form> 
+
+?>
 
 </body>
 
