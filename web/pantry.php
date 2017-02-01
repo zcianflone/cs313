@@ -8,9 +8,6 @@
 <body>
 <?php
 
-echo "Hello";
-
-
 $dbUrl = getenv('DATABASE_URL');
 
 $dbopts = parse_url($dbUrl);
@@ -30,6 +27,15 @@ foreach ($db->query('SELECT name FROM item') as $row)
 }
 ?>
 
+<form action="action_page.php">
+  Search:<br>
+  <input type="text" name="desireditem">
+  <br>
+  Last name:<br>
+  <input type="submit" value="Submit">
+</form> 
+
 </body>
 
 </html>
+
