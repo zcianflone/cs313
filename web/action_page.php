@@ -23,15 +23,19 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 echo "item: " . $_POST["desireditem"];
 echo '<br/>';
 
+$quantity = 0;
+
 foreach ($db->query('SELECT name, quantity FROM item') as $row)
 {
 	if ($row["name"] == $_POST["desireditem"]){
-		echo "quantity: " . $row["quantity"];
-		echo '<br/>';
+		$quantity = $row["quantity"];
+		
 	}
 	
 }
 
+echo "quantity: " $quantity;
+		echo '<br/>';
 
 ?>
 
