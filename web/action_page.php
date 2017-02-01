@@ -30,10 +30,6 @@ foreach ($db->query('SELECT name, quantity FROM item') as $row)
 		echo '<br/>';
 	}
 	
-	else {
-		echo "quantity: " . $row["quantity"];
-	}
-	
 }
 
 
