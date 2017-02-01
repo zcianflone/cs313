@@ -8,7 +8,9 @@
 <body>
 <?php
 
-try
+echo "Hello";
+
+/*try
 {
 
 $dbUrl = getenv('DATABASE_URL');
@@ -35,7 +37,7 @@ foreach ($db->query('SELECT name FROM item') as $row)
 	echo 'item name:'. $row['name'];
 	echo '<br/>';
 }
-?>
+?>*/
 
 </body>
 
