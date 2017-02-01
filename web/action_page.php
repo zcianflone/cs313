@@ -34,7 +34,7 @@ foreach ($db->query('SELECT name, quantity FROM item') as $row)
 	
 }
 
-echo "quantity: " $quantity;
+echo "quantity: " . $quantity;
 		echo '<br/>';
 
 ?>
