@@ -36,8 +36,8 @@ foreach ($db->query('SELECT name FROM item') as $row)
 {
 	echo 'item name:'. $row['name'];
 	echo '<br/>';
-}
-?>*/
+}*/
+?>
 
 </body>
 
