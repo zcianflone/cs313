@@ -26,9 +26,16 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($rows as $row)
 {
-	echo $row["name"];
+	echo "Name: " . $row["name"];
 	echo "<br>";
-	echo $row["quantity"];
+	echo "Quantity: " . $row["quantity"];
+	echo "<br>";
+	
+	if(isSet($row["expdate"])
+	{
+		echo "Expiration Date: " . $row["expdate"];
+		echo "<br>";
+	}
 	
 }
 
