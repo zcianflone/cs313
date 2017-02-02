@@ -25,6 +25,8 @@ echo '<br/>';
 
 $quantity = 0;
 
+echo"<p>Search Results:</p>";
+
 foreach ($db->query('SELECT name, quantity FROM item') as $row)
 {
 	if ($row["name"] == $_POST["desireditem"]){
@@ -34,7 +36,7 @@ foreach ($db->query('SELECT name, quantity FROM item') as $row)
 	
 }
 
-echo"<p>Search Results:</p>";
+
 
 echo "quantity: " . $quantity;
 		echo '<br/>';
