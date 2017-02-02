@@ -29,6 +29,8 @@ foreach ($rows as $row)
 	echo $row["name"];
 	echo "<br>";
 	echo $row["quantity"];
+	
+}
 
 ?>
 
