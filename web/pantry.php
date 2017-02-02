@@ -92,7 +92,7 @@ if($_SESSION["voted"]) {
 		$link = str_replace(' ','_', $row['name']);
 		
 		
-		echo "href=\"pantryitem.php?itemName=". $link ."\" class=\"list-group-item\">".$row['name']. "</a>";
+		echo "<a href=\"pantryitem.php?itemName=". $link ."\" class=\"list-group-item\">".$row['name']. "</a>";
 	}
 	?>
 	
