@@ -56,7 +56,7 @@ if($_SESSION["voted"]) {
       <h3>Pantry Pro</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a data-toggle="pill" href="#pantry">Pantry</a></li>
-        <li><a data-toggle="pill" href="#pantryitem">Add Pantry Item</a></li>
+        <li><a data-toggle="pill" href="#pantryitem">Pantry Item Detail</a></li>
         <li><a data-toggle="pill" href="#additem">Add Pantry Item</a></li>
         <li><a data-toggle="pill" href="#recipes">Recipes</a></li>
         <li><a data-toggle="pill" href="#createrecipe">Create Recipe</a></li>
