@@ -89,7 +89,7 @@ if($_SESSION["voted"]) {
 
 	foreach ($db->query('SELECT name FROM item') as $row)
 	{
-		echo "<a href=\"#pantryitem\" class=\"list-group-item\">".$row['name']. "</a>";
+		echo "<a data-toggle=\"pill\" href=\"#pantryitem\" class=\"list-group-item\">".$row['name']. "</a>";
 	}
 	?>
 	
