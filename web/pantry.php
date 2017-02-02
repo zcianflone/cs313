@@ -66,7 +66,7 @@ if($_SESSION["voted"]) {
     <div class="col-sm-9">
     <div class="tab-content">
     
- 	<div class="container">
+ 	<div id="pantry" class="tab-pane fade in active">
   		<h2>All Pantry Items</h2>
   		<div class="list-group">
     
@@ -94,7 +94,7 @@ if($_SESSION["voted"]) {
 	?>
 	
 	 </div>
-	</div>
+	
 	
 	
 	<form action="action_page.php" method="post">
@@ -106,6 +106,8 @@ if($_SESSION["voted"]) {
   		<br>
   		<input type="submit" value="Submit">
 	</form> 
+	
+	</div>
 	
 	<div id="pantryitem" class="tab-pane fade">
     
