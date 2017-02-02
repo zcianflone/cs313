@@ -135,7 +135,19 @@ if($_SESSION["voted"]) {
 	</form> 
   
     </div>
-
+    
+    <div id="recipes" class="tab-pane fade">
+    
+    <p>Under Construction!</p>
+    
+    </div>
+    
+    <div id="createrecipe" class="tab-pane fade">
+    
+    <p>Under Construction!</p>
+    
+    </div>
+    
   	</div>
   	
   	
