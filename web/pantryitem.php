@@ -24,6 +24,7 @@ $stmt->bindValue(':name', $itemName, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+echo"<p>Item Details:</p>";
 foreach ($rows as $row)
 {
 	echo "Name: " . $row["name"];
@@ -34,8 +35,8 @@ foreach ($rows as $row)
 	echo "<br>";
 }
 
-echo "<p> Proof of Concept.  I'm trying to build this functionality into the main page with AJAX, but I'm not quite there yet.</p>"
-
+echo "<p> Proof of Concept.  I'm trying to build this functionality into the main page with AJAX, but I'm not quite there yet. 
+I don't want to commit to building this page out unless I can't the AJAX to work/p>";
 
 ?>
 

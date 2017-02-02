@@ -34,10 +34,13 @@ foreach ($db->query('SELECT name, quantity FROM item') as $row)
 	
 }
 
+echo"<p>Search Results:</p>";
+
 echo "quantity: " . $quantity;
 		echo '<br/>';
 		
-echo "<p> Proof of Concept.  I'm trying to build this functionality into the main page with AJAX, but I'm not quite there yet.</p>"
+echo "<p> Proof of Concept.  I'm trying to build this functionality into the main page with AJAX, but I'm not quite there yet. 
+I don't want to commit to building this page out unless I can't the AJAX to work/p>";
 
 ?>
 
