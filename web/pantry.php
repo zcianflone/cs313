@@ -88,7 +88,7 @@ if($_SESSION["voted"]) {
 
 	foreach ($db->query('SELECT name FROM item') as $row)
 	{
-		echo "<a href=\"#\" class=\"list-group-item\">$row[\'name\']</a>"
+		echo "<a href=\"#\" class=\"list-group-item\">$row[\'name\']</a>";
 	}
 	?>
 	
