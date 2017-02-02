@@ -19,7 +19,17 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
 
 $itemName = str_replace('_',' ', $_GET['itemName']);
 
-echo "Hello " . $itemName;
+$stmt = $db->prepare('SELECT * FROM item WHERE name=:name');
+$stmt->bindValue(':name', $itemName, PDO::PARAM_STR);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($rows as $row)
+{
+	echo $row["name"];
+	echo "<br>";
+	echo $row["quantity"];
+
 ?>
 
 </body>
