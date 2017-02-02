@@ -30,11 +30,8 @@ foreach ($rows as $row)
 	echo "<br>";
 	echo "Quantity: " . $row["quantity"];
 	echo "<br>";
-
-		echo "Expiration Date: " . $row["expdate"];
-		echo "<br>";
-	
-	
+	echo "Expiration Date: " . $row["expdate"];
+	echo "<br>";
 }
 
 ?>

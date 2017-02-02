@@ -56,7 +56,6 @@ if($_SESSION["voted"]) {
       <h3>Pantry Pro</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a data-toggle="pill" href="#pantry">Pantry</a></li>
-        <li><a data-toggle="pill" href="#pantryitem">Pantry Item Detail</a></li>
         <li><a data-toggle="pill" href="#additem">Add Pantry Item</a></li>
         <li><a data-toggle="pill" href="#recipes">Recipes</a></li>
         <li><a data-toggle="pill" href="#createrecipe">Create Recipe</a></li>
@@ -112,9 +111,28 @@ if($_SESSION["voted"]) {
 	
 	</div>
 	
-	<div id="pantryitem" class="tab-pane fade">
+	<div id="additem" class="tab-pane fade">
+	
+		<h3>Add New Item</h3>
+		<h4>Under Construction!</h4>
     
-    <p>Hello!</p>
+    	<form action="" method="post">
+  		<br>
+  		<br>
+ 		 Name:<br>
+  		<input type="text" name="name">
+ 		<br>
+  		<br>
+  		Quantity:<br>
+  		<input type="text" name="quantity">
+ 		<br>
+  		<br>
+  		Expiration Date:<br>
+  		<input type="text" name="quantity">
+ 		<br>
+  		<br>
+  		<input type="submit" value="Submit">
+	</form> 
   
     </div>
 
