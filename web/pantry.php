@@ -53,7 +53,7 @@ if($_SESSION["voted"]) {
   <div class="row content">
     <div class="col-sm-3 sidenav">
     <br> 
-      <h3>Zac's Survey</h3>
+      <h3>Pantry Pro</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a data-toggle="pill" href="#pantry">Pantry</a></li>
         <li><a data-toggle="pill" href="#additem">Add Pantry Item</a></li>
@@ -64,6 +64,10 @@ if($_SESSION["voted"]) {
 
     <div class="col-sm-9">
     <div class="tab-content">
+    
+ 	<div class="container">
+  		<h2>All Pantry Items</h2>
+  		<div class="list-group">
     
     <?php
 
@@ -78,13 +82,19 @@ if($_SESSION["voted"]) {
 	$dbName = ltrim($dbopts["path"],'/');
 
 	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+	
+	
+	
 
 	foreach ($db->query('SELECT name FROM item') as $row)
 	{
-		echo 'item name:'. $row['name'];
-		echo '<br/>';
+		echo "<a href=\"#\" class=\"list-group-item\">$row[\'name\']</a>"
 	}
 	?>
+	
+	 </div>
+	</div>
+	
 	
 	<form action="action_page.php" method="post">
   		<br>
