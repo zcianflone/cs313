@@ -106,18 +106,18 @@ if($_SESSION["voted"]) {
   		<br>
   		<input type="submit" value="Submit">
 	</form> 
-
-  	</div>
-    
-    
-    <div id="pantryitem" class="tab-pane fade">
+	
+	<div id="pantryitem" class="tab-pane fade">
     
     <p>Hello!</p>
   
     </div>
-    </div>
-            </div>
-          </div>
+
+  	</div>
+    
+    
+    
+  
 
 <footer class="container-fluid">
   <p>Zac Cianflone</p>
