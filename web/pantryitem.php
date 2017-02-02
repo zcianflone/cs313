@@ -34,6 +34,9 @@ foreach ($rows as $row)
 	echo "<br>";
 }
 
+echo "<p> Proof of Concept.  I'm trying to build this functionality into the main page with AJAX, but I'm not quite there yet.</p>"
+
+
 ?>
 
 </body>

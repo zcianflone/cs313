@@ -114,10 +114,10 @@ if($_SESSION["voted"]) {
 	<div id="additem" class="tab-pane fade">
 	
 		<h3>Add New Item</h3>
+		<hr>
 		<h4>Under Construction!</h4>
-    
+    	
     	<form action="" method="post">
-  		<br>
   		<br>
  		 Name:<br>
   		<input type="text" name="name">
