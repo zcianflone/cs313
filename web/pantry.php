@@ -89,7 +89,10 @@ if($_SESSION["voted"]) {
 
 	foreach ($db->query('SELECT name FROM item') as $row)
 	{
-		echo "<a data-toggle=\"pill\" href=\"#pantryitem\" class=\"list-group-item\">".$row['name']. "</a>";
+		$link = str_replace(' ','_', $row['name']);
+		
+		
+		echo "href=\"pantryitem.php?itemName=". $link ."class=\"list-group-item\">".$row['name']. "</a>";
 	}
 	?>
 	

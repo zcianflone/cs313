@@ -166,10 +166,7 @@ function loadResults() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <footer class="container-fluid">
   <p>Zac Cianflone</p>
