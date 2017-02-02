@@ -36,7 +36,7 @@ foreach ($rows as $row)
 }
 
 echo "<p> Proof of Concept.  I'm trying to build this functionality into the main page with AJAX, but I'm not quite there yet. 
-I don't want to commit to building this page out unless I can't the AJAX to work/p>";
+I don't want to commit to building this page out unless I can't the AJAX to work</p>";
 
 ?>
 
