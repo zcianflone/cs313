@@ -56,6 +56,7 @@ if($_SESSION["voted"]) {
       <h3>Pantry Pro</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a data-toggle="pill" href="#pantry">Pantry</a></li>
+        <li><a data-toggle="pill" href="#pantryitem">Add Pantry Item</a></li>
         <li><a data-toggle="pill" href="#additem">Add Pantry Item</a></li>
         <li><a data-toggle="pill" href="#recipes">Recipes</a></li>
         <li><a data-toggle="pill" href="#createrecipe">Create Recipe</a></li>
@@ -88,7 +89,7 @@ if($_SESSION["voted"]) {
 
 	foreach ($db->query('SELECT name FROM item') as $row)
 	{
-		echo "<a href=\"#\" class=\"list-group-item\">".$row['name']. "</a>";
+		echo "<a href=\"#pantryitem\" class=\"list-group-item\">".$row['name']. "</a>";
 	}
 	?>
 	
@@ -109,8 +110,9 @@ if($_SESSION["voted"]) {
   	</div>
     
     
-    <div id="results" class="tab-pane fade">
+    <div id="pantryitem" class="tab-pane fade">
     
+    <p>Hello!</p>
   
     </div>
     </div>
