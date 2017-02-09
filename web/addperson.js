@@ -36,8 +36,7 @@ $.ajax({
 
     // Clear the form.
     $('#name').val('');
-    $('#email').val('');
-    $('#message').val('');
+    $('#password').val('');
 });
 
 .fail(function(data) {
