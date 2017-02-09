@@ -21,7 +21,7 @@ $sql = "INSERT INTO person (kait, test);"
 
 $db->query($sql);
 
-echo "done!"
+echo "done!";
 ?>
 
 </body>
