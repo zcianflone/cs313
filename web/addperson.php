@@ -6,7 +6,7 @@
         $name = strip_tags(trim($_POST["name"]));
         $password = strip_tags(trim($_POST["password"]));
 
-        /*if ( empty($name) OR empty($password)) {
+        if ( empty($name) OR empty($password)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Oops! There was a problem with your submission. Please complete the form and try again.";
@@ -17,7 +17,7 @@
            // Set a 200 (okay) response code.
             http_response_code(200);
             echo "Thank You! Your message has been sent.";
-        }*/
+        }
 
 
     } else {
