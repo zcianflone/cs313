@@ -46,6 +46,6 @@ $.ajax({
     if (data.responseText !== '') {
         $(formMessages).text(data.responseText);
     } else {
-        $(formMessages).text('Oops! An error occured.');
+        $(formMessages).text('Oops! An error occurred.');
     }
 });
