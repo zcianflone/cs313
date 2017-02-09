@@ -1,5 +1,20 @@
 <?php
 
+	$dbUrl = getenv('DATABASE_URL');
+
+	$dbopts = parse_url($dbUrl);
+
+	$dbHost = $dbopts["host"];
+	$dbPort = $dbopts["port"];
+	$dbUser = $dbopts["user"];
+	$dbPassword = $dbopts["pass"];
+	$dbName = ltrim($dbopts["path"],'/');
+
+	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+
+echo "done!";
+
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -16,6 +31,10 @@
         {
            // Set a 200 (okay) response code.
             http_response_code(200);
+            
+            $sql = "INSERT INTO person(name, password) VALUES (" . $name . "," . $password . ")";
+			$db->query($sql);
+
             echo "Name:" . $name . "Pass:" . $password;
         }
 
