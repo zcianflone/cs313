@@ -13,8 +13,6 @@
 	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 
-echo "done!";
-
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -32,7 +30,7 @@ echo "done!";
            // Set a 200 (okay) response code.
             http_response_code(200);
             
-            $sql = "INSERT INTO person(name, password) VALUES (" . $name . "," . $password . ")";
+            $sql = "INSERT INTO person(name, password) VALUES ('" . $name . "','" . $password . "')";
 			$db->query($sql);
 
             echo "Name:" . $name . "Pass:" . $password;
