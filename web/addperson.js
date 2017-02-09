@@ -10,11 +10,8 @@ $(function() {
 $(form).submit(function(event) {
     // Stop the browser from submitting the form.
     event.preventDefault();
-
-    // TODO
-});
-
-// Serialize the form data.
+    
+    // Serialize the form data.
 var formData = $(form).serialize();
 
 // Submit the form using AJAX.
@@ -47,6 +44,11 @@ $.ajax({
         $(formMessages).text('Oops! An error occurred.');
     }
 });
+
+    
+});
+
+
 
 });
 
