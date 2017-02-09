@@ -17,7 +17,7 @@ $dbName = ltrim($dbopts["path"],'/');
 
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-$sql = "INSERT INTO person VALUES ('kait', 'test')";
+$sql = "INSERT INTO person(name, password) VALUES ('kait', 'test')";
 
 $db->query($sql);
 
