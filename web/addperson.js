@@ -24,8 +24,7 @@ $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
     data: formData
-});
-
+})
 .done(function(response) {
     // Make sure that the formMessages div has the 'success' class.
     $(formMessages).removeClass('error');
@@ -37,8 +36,7 @@ $.ajax({
     // Clear the form.
     $('#name').val('');
     $('#password').val('');
-});
-
+})
 .fail(function(data) {
     // Make sure that the formMessages div has the 'error' class.
     $(formMessages).removeClass('success');
