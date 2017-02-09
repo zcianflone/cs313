@@ -1,5 +1,6 @@
 $(function() {
     // Get the form.
+    console.log("here!");
     var form = $('#ajax-newPerson');
 
     // Get the messages div.
