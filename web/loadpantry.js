@@ -7,7 +7,7 @@ $(function() {
 
 	$(listButton).click(function(){
 	
-	$(list).text("<ul class=\"list-group\"><li class=\"list-group-item\">First item</li></ul>");
+	$(list).append("<ul class=\"list-group\"><li class=\"list-group-item\">First item</li></ul>");
 
     });
 });
