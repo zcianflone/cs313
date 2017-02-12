@@ -29,9 +29,9 @@
 			
 			$result = pg_query($db, $sql);
 			
-			
+			$row = pg_fetch_row($result);
 
-            echo "Result:" . $result[0];
+            echo "Result:" . $row[0];
         }
 
 
