@@ -33,7 +33,7 @@
 				echo "Username or Password Didn't Match Our Records!";
 			}
 			else if($result['password'] == $password){
-				echo "pantry.php?id=".$result['id'];
+				echo "pantry.html?id=".$result['id'];
 			}
 			else{
 				echo "Incorrect Password!";
