@@ -34,6 +34,7 @@ $.ajax({
     		{
     			 // Set the message text.
     			$(formMessages).text(response);
+    			$(formMessages).addClass("alert alert-warning");
             }
    
 
