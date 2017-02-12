@@ -29,9 +29,9 @@
 			$result = $db->query($sql);
 			
 		
-			while($row = $result->fetch_assoc()) {
+			/*while($row = $result->fetch_assoc()) {
 			echo "result: " . $row["id"];
-		}
+		}*/
         }
 
 
