@@ -20,10 +20,18 @@
            // Set a 200 (okay) response code.
             http_response_code(200);
             
-            $sql = "INSERT INTO person(name, password) VALUES ('" . $name . "','" . $password . "')";
-			$db->query($sql);
+            
+            if (
+            
+            $sql = "SELECT id FROM person WHERE name =('" . $name . "')";
+			//$db->query($sql);
+			
+			
+			$result = pg_query($db, $sql)
+			
+			
 
-            echo "New User \"" . $name . "\" has been added.";
+            echo "Result:" . $result;
         }
 
 
