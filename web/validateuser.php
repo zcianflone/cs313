@@ -37,6 +37,8 @@
 			}
 			else{
 				echo $result['id'] . " bad";
+				echo $password;
+				echo $result['password'];
 			}
 		
 
