@@ -23,7 +23,7 @@
             $sql = "INSERT INTO person(name, password) VALUES ('" . $name . "','" . $password . "')";
 			$db->query($sql);
 
-            echo "New User: " . $name . " has been added.";
+            echo "New User \"" . $name . "\" has been added.";
         }
 
 
