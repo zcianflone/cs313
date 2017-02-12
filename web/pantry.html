@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="loadpantry.js"></script>
   
   <style>
     .row.content {height: 2500px}
@@ -43,7 +45,7 @@
     <br> 
       <h3>Pantry Pro</h3>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a data-toggle="pill" href="#pantry">Pantry</a></li>
+        <li class="active"><a data-toggle="pill" href="#pantry" id="pantryButton">Pantry</a></li>
         <li><a data-toggle="pill" href="#additem">Add Pantry Item</a></li>
         <li><a data-toggle="pill" href="#recipes">Recipes</a></li>
         <li><a data-toggle="pill" href="#createrecipe">Create Recipe</a></li>
@@ -55,50 +57,14 @@
     
  	<div id="pantry" class="tab-pane fade in active">
   		<h2>All Pantry Items</h2>
-  		<div class="list-group">
+  		<div id="pantryList" class="list-group">
     
-    <?php
 
-	$dbUrl = getenv('DATABASE_URL');
-
-	$dbopts = parse_url($dbUrl);
-
-	$dbHost = $dbopts["host"];
-	$dbPort = $dbopts["port"];
-	$dbUser = $dbopts["user"];
-	$dbPassword = $dbopts["pass"];
-	$dbName = ltrim($dbopts["path"],'/');
-
-	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 	
+	 	</div>
 	
 	
 
-	foreach ($db->query('SELECT name FROM item') as $row)
-	{
-	
-		//makes each entry into a link that navigates to details page
-		$link = str_replace(' ','_', $row['name']);
-		
-		
-		echo "<a href=\"pantryitem.php?itemName=". $link ."\" class=\"list-group-item\">".$row['name']. "</a>";
-	}
-	?>
-	
-	 </div>
-	
-	
-	
-	<form action="action_page.php" method="post">
-  		<br>
-  		<br>
- 		 Search:<br>
-  		<input type="text" name="desireditem">
- 		<br>
-  		<br>
-  		<input type="submit" value="Submit">
-	</form> 
-	
 	</div>
 	
 	<div id="additem" class="tab-pane fade">
@@ -154,5 +120,3 @@
 
 </body>
 </html>
-
- 
