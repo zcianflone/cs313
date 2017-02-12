@@ -32,8 +32,11 @@
 			if (!$result){
 				echo "Username or Password Didn't Match Our Records!";
 			}
-			else {
-				echo $result['id'];
+			else if($result['password'] == $password{
+				echo $result['id'] . " good";
+			}
+			else{
+				echo $result['id'] . " bad";
 			}
 		
 
