@@ -25,10 +25,18 @@
             
             $sql = "SELECT id FROM person WHERE name ='zac'";
 			//$db->query($sql);
-			
-			
+		
 			
 			$result = $db->query($sql);
+			
+			if ($result->num_rows > 0) {
+   				 // output data of each row
+    			while($row = $result->fetch_assoc()) {
+        			echo "id: " . $row["id"];
+    			}
+			} else {
+    			echo "0 results";
+			}
 			
 		
 			/*while($row = $result->fetch_assoc()) {
