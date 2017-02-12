@@ -6,6 +6,8 @@ $(function() {
     var list = $('#pantryList');
 
 	$(listButton).click(function(){
-        $(this).hide();
+	
+	$(list).text("<li class=\"list-group-item\">First item</li>");
+
     });
 });
