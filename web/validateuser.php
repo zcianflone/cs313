@@ -1,8 +1,17 @@
 <?php
 
-	require ("dbConnect.php");
-	$db = get_db();
+		$dbUrl = getenv('DATABASE_URL');
 
+			$dbopts = parse_url($dbUrl);
+
+			$dbHost = $dbopts["host"];
+			$dbPort = $dbopts["port"];
+			$dbUser = $dbopts["user"];
+			$dbPassword = $dbopts["pass"];
+			$dbName = ltrim($dbopts["path"],'/');
+
+			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+			
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -29,10 +38,6 @@
 			
 			$result = $db->query($sql);
 			
-				while($row = $result->fetch_assoc()) {
-        			echo "id: " . $row["id"];
-    			}
-		
 			
 			if ($result->num_rows > 0) {
    				 // output data of each row
