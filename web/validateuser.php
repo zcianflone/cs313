@@ -26,7 +26,7 @@
             $sql = "SELECT id FROM person WHERE name ='zac'";
 			//$db->query($sql);
 			
-			$result = $db->query($sql);
+			$db->query($sql);
 			
 		
 			/*while($row = $result->fetch_assoc()) {
