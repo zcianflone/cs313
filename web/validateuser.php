@@ -27,11 +27,11 @@
 			//$db->query($sql);
 			
 			
-			$result = query($db, $sql);
+			$result = pg_query($db, $sql);
 			
 			
 
-            echo "Result:" . $result;
+            echo "Result:" . $result[0];
         }
 
 
