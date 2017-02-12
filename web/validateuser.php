@@ -28,11 +28,14 @@
 			
 			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
 			
-			echo $result['id'];
+			
+			if (!$result){
+				echo "Username or Password Didn't Match Our Records!";
+			}
+			else {
+				echo $result['id'];
+			}
 		
-			/*while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
-				 echo $row['id'];
-			}*/
 
 			
 		
