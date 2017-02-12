@@ -27,7 +27,7 @@
 			//$db->query($sql);
 			
 			
-			$result = pg_query($db, $sql);
+			$result = query($db, $sql);
 			
 			
 
