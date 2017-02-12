@@ -30,8 +30,12 @@ $.ajax({
     $(formMessages).removeClass('error');
     $(formMessages).addClass('success');
 
-    // Set the message text.
-    $(formMessages).text(response);
+	if (!data.includes("pantry.php?id="))
+    		{
+    			 // Set the message text.
+    			$(formMessages).text(response);
+            }
+   
 
     // Clear the form.
     $('#name').val('');
