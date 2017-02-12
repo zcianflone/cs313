@@ -23,7 +23,7 @@
             $sql = "INSERT INTO person(name, password) VALUES ('" . $name . "','" . $password . "')";
 			$db->query($sql);
 
-            echo "Name:" . $name . "Pass:" . $password;
+            echo "New User: " . $name . " has been added."
         }
 
 
@@ -32,5 +32,7 @@
         http_response_code(403);
         echo "There was a problem with your submission, please try again.";
     }
+    
+    //TO DO Add delete user functionality
 
 ?>
