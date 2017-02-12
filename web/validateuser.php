@@ -26,7 +26,7 @@
             $sql = "SELECT id FROM person WHERE name =('" . $name . "')";
 			//$db->query($sql);
 			
-			$result = pg_query($db, $sql);
+			$result = $db->query($sql);
 			
 			if(!$result){
 				echo "query's messed up";
