@@ -26,12 +26,16 @@
             $sql = "SELECT id FROM person WHERE name =('" . $name . "')";
 			//$db->query($sql);
 			
-			
+			if(!$result){
+				echo "query's messed up";
+			}
+			else{
 			$result = pg_query($db, $sql);
 			
 			$row = pg_fetch_row($result);
 
             echo "Result:" . $row[0];
+        }
         }
 
 
