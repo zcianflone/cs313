@@ -18,6 +18,12 @@ $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
     data: formData
+    success: function(data) { 
+    			if (data.includes("pantry.php?id=")
+    			{
+                	window.location.href =  data;
+                }
+            }
 })
 .done(function(response) {
     // Make sure that the formMessages div has the 'success' class.
