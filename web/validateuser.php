@@ -24,10 +24,11 @@
 			$stmt = $db->prepare("SELECT id FROM person");
 			$stmt -> execute();
 		
+			while ($row = $stmt -> fetch(PDO::FETCH_ASSOC){
+				 echo $row['id'] . "\n";
+			}
+
 			
-			$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-		
-			print_r($result);
 		
         }
 
