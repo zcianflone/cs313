@@ -23,10 +23,15 @@
             
 			$stmt = $db->prepare("SELECT id FROM person WHERE name = 'kait'");
 			$stmt -> execute();
+			
+			
+			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+			
+			echo $result['id'];
 		
-			while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+			/*while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
 				 echo $row['id'];
-			}
+			}*/
 
 			
 		
