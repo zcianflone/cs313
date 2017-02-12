@@ -1,17 +1,8 @@
 <?php
 
-		$dbUrl = getenv('DATABASE_URL');
+	require ("dbConnect.php");
+	$db = get_db();
 
-			$dbopts = parse_url($dbUrl);
-
-			$dbHost = $dbopts["host"];
-			$dbPort = $dbopts["port"];
-			$dbUser = $dbopts["user"];
-			$dbPassword = $dbopts["pass"];
-			$dbName = ltrim($dbopts["path"],'/');
-
-			$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-			
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -30,24 +21,13 @@
             http_response_code(200);
             
             
-        
-            
-            $sql = "SELECT id FROM person";
-			//$db->query($sql);
+			$stmt = $db->prepare("SELECT id FROM person");
+			$stmt -> execute();
 		
 			
-			$result = $db->query($sql);
-			
-			
-			if ($result->num_rows > 0) {
-   				 // output data of each row
-    			while($row = $result->fetch_assoc()) {
-        			echo "id: " . $row["id"];
-    			}
-			} else {
-    			echo "0 results";
-			}
-			
+			$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+			print_r($result);
+		
         }
 
 
