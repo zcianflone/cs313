@@ -23,13 +23,12 @@
             
         
             
-            $sql = "SELECT id FROM person WHERE name ='zac'";
+            $sql = "SELECT id FROM person";
 			//$db->query($sql);
 		
 			
 			$result = $db->query($sql);
-			
-			echo $result;
+		
 			
 			if ($result->num_rows > 0) {
    				 // output data of each row
