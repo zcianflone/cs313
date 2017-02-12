@@ -23,7 +23,7 @@
             
         
             
-            $sql = "SELECT id FROM person WHERE name =('" . $name . "')";
+            $sql = "SELECT id FROM person WHERE name =('zac')";
 			//$db->query($sql);
 			
 			$result = $db->query($sql);
@@ -32,11 +32,9 @@
 				echo "query's messed up";
 			}
 			else{
-			
-			
-			$row = pg_fetch_row($result);
-
-            echo "Result:" . $row[0];
+			while($row = $result->fetch_assoc()) {
+			echo "result: " . $row["id"];
+			}
         }
         }
 
