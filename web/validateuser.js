@@ -17,7 +17,7 @@ var formData = $(form).serialize();
 $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
-    data: formData
+    data: formData,
     success: function(data) { 
     			if (data.includes("pantry.php?id=")
     			{
