@@ -26,8 +26,7 @@
 		
 			
 			$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-			
-			if (!$result)
+		
 			print_r($result);
 		
         }
