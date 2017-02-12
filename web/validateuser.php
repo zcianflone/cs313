@@ -34,6 +34,7 @@
 			}
 			else if($result['password'] == $password){
 				echo "pantry.php?id=".$result['id'];
+			}
 			else{
 				echo $result['id'] . " bad";
 				echo $password;
