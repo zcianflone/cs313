@@ -30,7 +30,7 @@ $.ajax({
     $(formMessages).removeClass('error');
     $(formMessages).addClass('success');
 
-	if (!data.includes("pantry.php?id="))
+	if (!response.includes("pantry.php?id="))
     		{
     			 // Set the message text.
     			$(formMessages).text(response);
