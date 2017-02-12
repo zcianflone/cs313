@@ -36,9 +36,7 @@
 				echo "pantry.php?id=".$result['id'];
 			}
 			else{
-				echo $result['id'] . " bad";
-				echo $password;
-				echo $result['password'];
+				echo "Incorrect Password!"
 			}
 		
 
