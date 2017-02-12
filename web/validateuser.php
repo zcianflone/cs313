@@ -21,7 +21,7 @@
             http_response_code(200);
             
             
-			$stmt = $db->prepare("SELECT id FROM person");
+			$stmt = $db->prepare("SELECT id FROM person WHERE name = 'zac'");
 			$stmt -> execute();
 		
 			while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
