@@ -21,7 +21,8 @@
             http_response_code(200);
             
             
-			$stmt = $db->prepare("SELECT id FROM person WHERE name = 'kait'");
+			$stmt = $db->prepare("SELECT id FROM person WHERE name = :name");
+			$stmt->bindParam(':name', $name);
 			$stmt -> execute();
 			
 			
