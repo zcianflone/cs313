@@ -24,7 +24,7 @@
 			$stmt = $db->prepare("SELECT id FROM person");
 			$stmt -> execute();
 		
-			while ($row = $stmt -> fetch(PDO::FETCH_ASSOC){
+			while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
 				 echo $row['id'] . "\n";
 			}
 
