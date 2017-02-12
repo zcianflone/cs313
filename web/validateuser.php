@@ -23,19 +23,15 @@
             
         
             
-            $sql = "SELECT id FROM person WHERE name =('zac')";
+            $sql = "SELECT id FROM person WHERE name ='zac'";
 			//$db->query($sql);
 			
 			$result = $db->query($sql);
 			
-			if(!$result){
-				echo "query's messed up";
-			}
-			else{
+		
 			while($row = $result->fetch_assoc()) {
 			echo "result: " . $row["id"];
-			}
-        }
+		}
         }
 
 
