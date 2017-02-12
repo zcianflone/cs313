@@ -21,13 +21,13 @@
             http_response_code(200);
             
             
-            if (
+        
             
             $sql = "SELECT id FROM person WHERE name =('" . $name . "')";
 			//$db->query($sql);
 			
 			
-			$result = pg_query($db, $sql)
+			$result = pg_query($db, $sql);
 			
 			
 
