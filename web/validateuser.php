@@ -28,6 +28,10 @@
 		
 			
 			$result = $db->query($sql);
+			
+				while($row = $result->fetch_assoc()) {
+        			echo "id: " . $row["id"];
+    			}
 		
 			
 			if ($result->num_rows > 0) {
