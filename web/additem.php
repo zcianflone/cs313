@@ -6,9 +6,9 @@
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
-        $name = strip_tags(trim($_POST["addItemName"]));
-        $quantity = strip_tags(trim($_POST["addItemQuantity"]));
-        $exp = strip_tags(trim($_POST["addItemExp"]));
+        $name = strip_tags(trim($_POST["name"]));
+        $quantity = strip_tags(trim($_POST["quantity"]));
+        $exp = strip_tags(trim($_POST["exp"]));
         //$id = strip_tags(trim($_POST["id"]));
 
            // Set a 200 (okay) response code.
