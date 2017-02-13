@@ -14,7 +14,7 @@
            // Set a 200 (okay) response code.
             http_response_code(200);
            
-            echo "Item: " . $name ." ". $quantity ." ". $exp . " " $id;
+            echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id;
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
