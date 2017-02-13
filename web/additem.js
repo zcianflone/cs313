@@ -18,7 +18,7 @@ $(form).submit(function(event) {
     // Serialize the form data.
 var formData = $(form).serialize();
 
-var expDate = $(#addItemExp);
+var expDate = $('#addItemExp');
 
 console.log(expDate);
 
