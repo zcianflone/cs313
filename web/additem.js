@@ -5,6 +5,12 @@ $(function() {
     // Get the messages div.
     var addItemMessages = $('#addItem-messages');
     
+    //Get id from URL to add item to the right user's id
+    var url = window.location.href;
+	var id = url.split('=');
+	id.shift();
+	console.log(id);
+	
     // Set up an event listener for the addItem form.
 $(form).submit(function(event) {
     // Stop the browser from submitting the form.
@@ -17,7 +23,7 @@ var formData = $(form).serialize();
 $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
-    data: formData
+    data: {formData : 'formData', id : 'id'}
 })
 .done(function(response) {
     // Make sure that the formMessages div has the 'success' class.
