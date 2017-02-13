@@ -9,12 +9,12 @@
         $name = strip_tags(trim($_POST["name"]));
         $quantity = strip_tags(trim($_POST["quantity"]));
         $exp = strip_tags(trim($_POST["exp"]));
-        //$id = strip_tags(trim($_POST["id"]));
+        $id = strip_tags(trim($_POST["id"]));
 
            // Set a 200 (okay) response code.
             http_response_code(200);
            
-            echo "Item " . $name . $quantity . $exp;
+            echo "Item: " . $name ." ". $quantity ." ". $exp . " " $id;
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
