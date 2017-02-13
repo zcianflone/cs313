@@ -19,10 +19,11 @@
             //this code only works where pantry_id is synonymous with user id.  
             //if multiple pantries eventually become supported, the code will need to change.
         
-            if (!$exp){
+            if ($exp){
             	$stmt = $db->prepare("INSERT INTO item(name, expdate, quantity, pantry_id) VALUES (:name, :expdate, :quantity, :pantry_id)");
 				$stmt->bindParam(':name', $name);
-				$stmt->bindParam(':expdate', $exp);
+				$newexp = date('Y-m-d', strtotime($exp));
+				$stmt->bindParam(':expdate', $newexp);
 				$stmt->bindParam(':quantity', $quantity);
 				$stmt->bindParam(':pantry_id', $id);
 				$stmt -> execute();
