@@ -9,7 +9,7 @@
         $name = strip_tags(trim($_POST["addItemName"]));
         $quantity = strip_tags(trim($_POST["addItemQuantity"]));
         $exp = strip_tags(trim($_POST["addItemExp"]));
-        $id = strip_tags(trim($_POST["id"]));
+        //$id = strip_tags(trim($_POST["id"]));
 
         if ( empty($name)) {
             // Set a 400 (bad request) response code and exit.
@@ -22,7 +22,7 @@
            // Set a 200 (okay) response code.
             http_response_code(200);
            
-            echo "Item " . $name . $quantity . $exp . $id;
+            echo "Item " . $name . $quantity . $exp;
         }
 
 

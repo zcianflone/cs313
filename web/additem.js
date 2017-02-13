@@ -18,11 +18,11 @@ $(form).submit(function(event) {
     // Serialize the form data.
 var formData = $(form).serialize();
 
-/*// Submit the form using AJAX.
+// Submit the form using AJAX.
 $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
-    data: {formData : 'formData', id : 'id'}
+    data: formData
 })
 .done(function(response) {
     // Make sure that the formMessages div has the 'success' class.
@@ -47,7 +47,7 @@ $.ajax({
     } else {
         $(formMessages).text('Oops! An error occurred.');
     }
-});*/
+});
 
     
 });
