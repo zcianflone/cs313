@@ -13,8 +13,29 @@
 
            // Set a 200 (okay) response code.
             http_response_code(200);
+            
+            //account for the case where the user doesn't insert an expdate
+            
+            //this code only works where pantry_id is synonymous with user id.  
+            //if multiple pantries eventually become supported, the code will need to change.
+        
+            if (!$exp){
+            	$stmt = $db->prepare("INSERT INTO item(name, expdate, quantity, pantry_id) VALUES (:name, :expdate, :quantity, :pantry_id)");
+				$stmt->bindParam(':name', $name);
+				$stmt->bindParam(':expdate', $exp);
+				$stmt->bindParam(':quantity', $quantity);
+				$stmt->bindParam(':pantry_id', $id);
+				$stmt -> execute();
+            }
+            else{
+            	$stmt = $db->prepare("INSERT INTO item(name, quantity, pantry_id) VALUES (:name, :quantity, :pantry_id)");
+				$stmt->bindParam(':name', $name);
+				$stmt->bindParam(':quantity', $quantity);
+				$stmt->bindParam(':pantry_id', $id);
+				$stmt -> execute();
+            }
            
-            echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id;
+            //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
