@@ -22,7 +22,7 @@ var formData = $(form).serialize();
 $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
-    data: {formData : 'formData', id : 'id'}
+    data: formData+'&id='+id
 })
 .done(function(response) {
     // Make sure that the formMessages div has the 'success' class.
