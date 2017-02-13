@@ -18,7 +18,7 @@ $(form).submit(function(event) {
     // Serialize the form data.
 var formData = $(form).serialize();
 
-// Submit the form using AJAX.
+/*// Submit the form using AJAX.
 $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
@@ -47,7 +47,7 @@ $.ajax({
     } else {
         $(formMessages).text('Oops! An error occurred.');
     }
-});
+});*/
 
     
 });
