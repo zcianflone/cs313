@@ -58,7 +58,7 @@
  	<div id="pantry" class="tab-pane fade in active">
   		<h2>All Pantry Items</h2>
   		<div id="pantryList" class="list-group">
-    
+    	
 
 	
 	 	</div>
@@ -67,24 +67,26 @@
 
 	</div>
 	
-	<div id="additem" class="tab-pane fade">
+	<div id="addItem" class="tab-pane fade">
 	
 		<h3>Add New Item</h3>
 		<hr>
-		<h4>Under Construction!</h4>
+		<div id="addItem-messages"></div>
     	
-    	<form action="" method="post">
+    	<form id="ajax-addItem" action="additem.php" method="post">
+    	 ID:<br>
+  		<input id="addItemID" type="text" name="id">
   		<br>
  		 Name:<br>
-  		<input type="text" name="name">
+  		<input id="addItemName" type="text" name="name">
  		<br>
   		<br>
   		Quantity:<br>
-  		<input type="text" name="quantity">
+  		<input id="addItemQuantity" type="text" name="quantity">
  		<br>
   		<br>
   		Expiration Date:<br>
-  		<input type="text" name="quantity">
+  		<input id="addItemExp" type="text" name="quantity">
  		<br>
   		<br>
   		<input type="submit" value="Submit">
