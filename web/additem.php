@@ -11,14 +11,6 @@
         $exp = strip_tags(trim($_POST["addItemExp"]));
         //$id = strip_tags(trim($_POST["id"]));
 
-        if ( empty($name)) {
-            // Set a 400 (bad request) response code and exit.
-            http_response_code(400);
-            echo "Oops! There was a problem with your submission. Please complete the form and try again.";
-            exit;
-        }
-        else
-        {
            // Set a 200 (okay) response code.
             http_response_code(200);
            
