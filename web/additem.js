@@ -3,14 +3,13 @@ $(function() {
     var form = $('#ajax-addItem');
 
     // Get the messages div.
-    var addItemMessages = $('#addItem-messages');
+    var formMessages = $('#addItem-messages');
     
     //Get id from URL to add item to the right user's id
     var url = window.location.href;
 	var id = url.split('=');
 	id.shift();
-	console.log(id);
-	
+
     // Set up an event listener for the addItem form.
 $(form).submit(function(event) {
     // Stop the browser from submitting the form.
