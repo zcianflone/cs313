@@ -26,12 +26,15 @@
 				}
 			else {
 			
-					$existing = 'SELECT id FROM person WHERE name = :username';
+					$existing = 'SELECT * FROM person WHERE name = :username';
 					$existstmt = $db->prepare($existing);
 					$existstmt->bindValue(':username', $username);
-					$existresponse = $existstmt->execute();
+					$existstmt->execute();
+					while ($row = $existstmt->fetch(PDO::FETCH_ASSOC)){
+							echo $results['id'];
+					}
 					
-					echo "Exist: " . $existresponse;
+		
 					
 					/*$username = htmlspecialchars($name);
 					$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
