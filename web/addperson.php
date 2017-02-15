@@ -30,8 +30,12 @@
 					$existstmt = $db->prepare($existing);
 					$existstmt->bindValue(':username', $name);
 					$existstmt->execute();
-					$result = $existstmt->fetch(PDO::FETCH_ASSOC);
-					print_r($result);
+					$existresult = $existstmt->fetch(PDO::FETCH_ASSOC);
+					
+					if ($existresult){
+						echo "Username already exists!";
+					}
+			
 					
 					
 		
