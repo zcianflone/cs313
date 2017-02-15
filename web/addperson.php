@@ -27,7 +27,6 @@
 			else {
 					$username = htmlspecialchars($name);
 					$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-					echo "Hashed Pass: " . $hashedPassword;
 			 		$query = 'INSERT INTO person(name, password) VALUES(:username, :password)';
 					$statement = $db->prepare($query);
 					$statement->bindValue(':username', $username);
