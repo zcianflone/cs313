@@ -31,7 +31,7 @@
 					$existstmt->bindValue(':username', $username);
 					$existstmt->execute();
 					while ($row = $existstmt->fetch(PDO::FETCH_ASSOC)){
-							echo $results['id'];
+							echo $row['id'];
 					}
 					
 		
