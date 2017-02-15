@@ -30,7 +30,7 @@
 					$existstmt = $db->prepare($existing);
 					$existstmt->bindValue(':username', $name);
 					$existstmt->execute();
-					$result = $existstmt->fetch(PDO::FETCH_ASSOC));
+					$result = $existstmt->fetch(PDO::FETCH_ASSOC);
 					print_r($result);
 					
 					
