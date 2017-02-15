@@ -28,11 +28,11 @@
 			
 					$existing = 'SELECT * FROM person WHERE name = :username';
 					$existstmt = $db->prepare($existing);
-					$existstmt->bindValue(':username', $username);
+					$existstmt->bindValue(':username', $name);
 					$existstmt->execute();
-					while ($row = $existstmt->fetch(PDO::FETCH_ASSOC)){
-							echo $row['id'];
-					}
+					$result = $existstmt->fetch(PDO::FETCH_ASSOC));
+					print_r($result);
+					
 					
 		
 					
