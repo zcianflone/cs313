@@ -27,11 +27,13 @@
 			else {
 					$username = htmlspecialchars($name);
 					$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-			 		$query = 'INSERT INTO login(username, password) VALUES(:username, :password)';
+			 		$query = 'INSERT INTO person(name, password) VALUES(:username, :password)';
 					$statement = $db->prepare($query);
 					$statement->bindValue(':username', $username);
 					$statement->bindValue(':password', $hashedPassword);
 					$statement->execute();
+					
+					echo "User " . $username . " has been added to Pantry Pro!";
 				}
         }
 
