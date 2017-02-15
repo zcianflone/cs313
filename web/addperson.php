@@ -28,7 +28,7 @@
 			
 					$existing = 'SELECT id FROM person WHERE name = :username';
 					$existstmt = $db->prepare($existing);
-					$existstmt->bindValue('username', $username);
+					$existstmt->bindValue(':username', $username);
 					$existresponse = $existstmt->execute();
 					
 					echo "Exist: " . $existresponse;
