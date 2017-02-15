@@ -20,24 +20,19 @@
            // Set a 200 (okay) response code.
             http_response_code(200);
             
-           if (!isset($username) || $username == ""|| !isset($password) || $password == "")
+           if (!isset($name) || $name == ""|| !isset($password) || $password == "")
 				{
 					echo "Please Complete Sign-Up Form";
 				}
 			else {
 					$username = htmlspecialchars($name);
 					$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-					$query = 'INSERT INTO login(username, password) VALUES(:username, :password)';
+			 		$query = 'INSERT INTO login(username, password) VALUES(:username, :password)';
 					$statement = $db->prepare($query);
 					$statement->bindValue(':username', $username);
 					$statement->bindValue(':password', $hashedPassword);
 					$statement->execute();
 				}
-            
-            $sql = "INSERT INTO person(name, password) VALUES ('" . $name . "','" . $password . "')";
-			$db->query($sql);
-
-            echo "New User \"" . $name . "\" has been added.";
         }
 
 
