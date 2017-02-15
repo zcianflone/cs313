@@ -19,6 +19,7 @@
             //this code only works where pantry_id is synonymous with user id.  
             //if multiple pantries eventually become supported, the code will need to change.
         
+        	//for the case that we have an exp date
             if ($exp){
             	$stmt = $db->prepare("INSERT INTO item(name, expdate, quantity, pantry_id) VALUES (:name, :expdate, :quantity, :pantry_id)");
 				$stmt->bindParam(':name', $name);
@@ -28,6 +29,7 @@
 				$stmt->bindParam(':pantry_id', $id);
 				$stmt -> execute();
             }
+            //when the user doesn't enter an exp date
             else{
             	$stmt = $db->prepare("INSERT INTO item(name, quantity, pantry_id) VALUES (:name, :quantity, :pantry_id)");
 				$stmt->bindParam(':name', $name);
