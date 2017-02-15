@@ -25,7 +25,15 @@
 					echo "Please Complete Sign-Up Form";
 				}
 			else {
-					$username = htmlspecialchars($name);
+			
+					$existing = 'SELECT id FROM person WHERE name = :username';
+					$existstmt = $db->prepare($existing);
+					$existstmt->bindValue('username', $username);
+					$existresponse = $existstmt->execute();
+					
+					echo "Exist: " . $existresponse;
+					
+					/*$username = htmlspecialchars($name);
 					$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 			 		$query = 'INSERT INTO person(name, password) VALUES(:username, :password)';
 					$statement = $db->prepare($query);
@@ -33,7 +41,7 @@
 					$statement->bindValue(':password', $hashedPassword);
 					$statement->execute();
 					
-					echo "User " . $username . " has been added to Pantry Pro!";
+					echo "User " . $username . " has been added to Pantry Pro!";*/
 				}
         }
 
