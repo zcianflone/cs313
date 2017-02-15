@@ -29,7 +29,7 @@
 					$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 			 		$query = 'INSERT INTO person(name, password) VALUES(:username, :password)';
 					$statement = $db->prepare($query);
-					$statement->bindValue(':username', $name);
+					$statement->bindValue(':username', $username);
 					$statement->bindValue(':password', $hashedPassword);
 					$statement->execute();
 					
