@@ -19,7 +19,7 @@ $(function() {
 		
 			var json = JSON.parse(response);
 			
-			console.log(json.name);
+			console.log(json);
 			
 			for (key in json){
 				
