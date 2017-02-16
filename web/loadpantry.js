@@ -20,7 +20,7 @@ $(function() {
 			console.log(response);
 			
 			for (key in response){
-				console.log(response['name']);
+				console.log(response[key]);
 			}
 
 		})
