@@ -11,7 +11,10 @@
     
      			$stmt = $db->prepare("SELECT * FROM item");
 				$stmt -> execute();
-				$result = $stmt -> fetch(PDO::FETCH_ASSOC);
+				$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+				
+				
+				
 				$jsonresult = json_encode($result);
 				
 				echo $jsonresult;
