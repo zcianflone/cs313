@@ -19,9 +19,9 @@ $(function() {
 		
 			console.log(response);
 			
-			$.each(response, function (key, value) {
-				console.log(key + ":" value);
-			});
+			for (key in response){
+				console.log(response['name']);
+			}
 
 		})
 		.fail(function(data) {
