@@ -36,10 +36,7 @@
 			}
 			else if(password_verify($password, $result['password'])){
 				$_SESSION['username'] = $result['name'];
-				header("Location: pantry.html");
-				die(); 
-				
-				echo "match!";
+				echo "pantry.html"; //arbitarily chosen message to send 
 			}
 			else{
 				echo "Incorrect Password!";

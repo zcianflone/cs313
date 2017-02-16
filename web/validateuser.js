@@ -19,7 +19,7 @@ $.ajax({
     url: $(form).attr('action'),
     data: formData,
     success: function(data) { 
-    			if (data.includes("pantry.html?id="))
+    			if (data.includes("pantry.html"))
     			{
                 	window.location.href =  data;
                 }
@@ -30,12 +30,12 @@ $.ajax({
     $(formMessages).removeClass('error');
     $(formMessages).addClass('success');
 
-	/*if (!response.includes("pantry.html?id="))
+	if (!response.includes("pantry.html"))
     		{
     			 // Set the message text.
     			$(formMessages).text(response);
     			$(formMessages).addClass("alert alert-danger");
-            }*/
+            }
    
 
     // Clear the form.
