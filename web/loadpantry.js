@@ -21,7 +21,7 @@ $(function() {
 			
 			for (key in json){
 				
-				console.log(key);
+				console.log(key.name);
 				if (key == "name"){
 				var val = json[key];
 				console.log(val);
