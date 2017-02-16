@@ -31,7 +31,7 @@
 				$stmt->bindParam(':person_id', $_SESSION['username']);
 				$stmt -> execute();
 				
-				echo "date here!";
+				echo $_SESSION['username'];
             }
             //when the user doesn't enter an exp date
             else{
