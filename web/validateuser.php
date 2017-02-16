@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	require ("dbConnect.php");
 	$db = get_db();
 
@@ -32,8 +34,13 @@
 			if (!$result){
 				echo "Username or Password Didn't Match Our Records!";
 			}
-			else if($result['password'] == $password){
-				echo "pantry.html?id=".$result['id'];
+			else if(password_verify($password, $result['password'])){
+				
+				
+				echo "password match!";
+				
+				
+				//echo "pantry.html?id=".$result['id'];
 			}
 			else{
 				echo "Incorrect Password!";
