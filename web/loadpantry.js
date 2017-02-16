@@ -17,7 +17,7 @@ $(function() {
 		})
 		.done(function(response) {
 		
-			var json = JSON.stringify(response);
+			var json = JSON.parse(response);
 			
 			for (key in json){
 				
