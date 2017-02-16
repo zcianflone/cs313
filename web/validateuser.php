@@ -35,12 +35,9 @@
 				echo "Username or Password Didn't Match Our Records!";
 			}
 			else if(password_verify($password, $result['password'])){
-				
-				
-				echo "password match!";
-				
-				
-				//echo "pantry.html?id=".$result['id'];
+				$_SESSION['username'] = $result['name'];
+				header("Location: pantry.html");
+				die(); 
 			}
 			else{
 				echo "Incorrect Password!";
