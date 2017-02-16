@@ -30,14 +30,18 @@
 				$stmt->bindParam(':quantity', $quantity);
 				$stmt->bindParam(':person_id', $_SESSION['username']);
 				$stmt -> execute();
+				
+				echo "date here!";
             }
             //when the user doesn't enter an exp date
             else{
-            	$stmt = $db->prepare("INSERT INTO item(name, quantity, pantry_id) VALUES (:name, :quantity, :person_id)");
+            	$stmt = $db->prepare("INSERT INTO item(name, quantity, person_id) VALUES (:name, :quantity, :person_id)");
 				$stmt->bindParam(':name', $name);
 				$stmt->bindParam(':quantity', $quantity);
 				$stmt->bindParam(':person_id', $_SESSION['username']);
 				$stmt -> execute();
+				
+				echo "date 2 here!";
             }
            
             //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
