@@ -17,12 +17,16 @@ $(function() {
 		})
 		.done(function(response) {
 		
-			console.log(response);
+			var json = JSON.stringify(response);
 			
-			for (key in response){
-				console.log(response[key]);
+			for (key in json){
+				
+				var val = json[key];
+				console.log(val);
+			
 			}
-
+			
+	
 		})
 		.fail(function(data) {
 	
