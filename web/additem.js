@@ -26,7 +26,7 @@ console.log(expDate);
 $.ajax({
     type: 'POST',
     url: $(form).attr('action'),
-    data: formData+'&id='+id
+    data: formData
 })
 .done(function(response) {
     // Make sure that the formMessages div has the 'success' class.
