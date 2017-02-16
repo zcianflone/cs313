@@ -20,8 +20,6 @@ var formData = $(form).serialize();
 
 var expDate = $('#addItemExp');
 
-console.log(expDate);
-
 // Submit the form using AJAX.
 $.ajax({
     type: 'POST',
