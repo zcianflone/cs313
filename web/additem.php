@@ -11,37 +11,43 @@
         $name = strip_tags(trim($_POST["name"]));
         $quantity = strip_tags(trim($_POST["quantity"]));
         $exp = strip_tags(trim($_POST["exp"]));
-        $id = strip_tags(trim($_POST["id"]));
+       
 
            // Set a 200 (okay) response code.
             http_response_code(200);
             
-            //account for the case where the user doesn't insert an expdate
-            
-            //this code only works where pantry_id is synonymous with user id.  
-            //if multiple pantries eventually become supported, the code will need to change.
-        
-        	//for the case that we have an exp date
+    
+        	
+        	$idstmt = $db->prepare("SELECT * FROM person WHERE name = :name");
+			$idstmt->bindParam(':name', $_SESSION['username']);
+			$idstmt -> execute();
+			
+			
+			$result = $idstmt -> fetch(PDO::FETCH_ASSOC);
+			
+			$id = $result["id"];
+			
+			
             if ($exp){
             	$stmt = $db->prepare("INSERT INTO item(name, expdate, quantity, person_id) VALUES (:name, :expdate, :quantity, :person_id)");
 				$stmt->bindParam(':name', $name);
 				$newexp = date('Y-m-d', strtotime($exp));
 				$stmt->bindParam(':expdate', $newexp);
 				$stmt->bindParam(':quantity', $quantity);
-				$stmt->bindParam(':person_id', $_SESSION['username']);
+				$stmt->bindParam(':person_id', $id );
 				$stmt -> execute();
 				
-				echo $_SESSION['username'];
+				echo "Item Added!";
             }
             //when the user doesn't enter an exp date
             else{
             	$stmt = $db->prepare("INSERT INTO item(name, quantity, person_id) VALUES (:name, :quantity, :person_id)");
 				$stmt->bindParam(':name', $name);
 				$stmt->bindParam(':quantity', $quantity);
-				$stmt->bindParam(':person_id', $_SESSION['username']);
+				$stmt->bindParam(':person_id', $id);
 				$stmt -> execute();
 				
-				echo "date 2 here!";
+				echo "Item Added!";
             }
            
             //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
