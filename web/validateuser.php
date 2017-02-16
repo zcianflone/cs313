@@ -38,6 +38,8 @@
 				$_SESSION['username'] = $result['name'];
 				header("Location: pantry.html");
 				die(); 
+				
+				echo "match!";
 			}
 			else{
 				echo "Incorrect Password!";
