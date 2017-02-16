@@ -18,6 +18,10 @@ $(function() {
 		.done(function(response) {
 		
 			console.log(response);
+			
+			$.each(response, function (key, value) {
+				console.log(key + ":" value);
+			});
 
 		})
 		.fail(function(data) {
