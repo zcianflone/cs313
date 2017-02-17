@@ -3,7 +3,7 @@ $(function() {
 	var listButton = $('#pantryButton');
 
     // Get the list.
-    var list = $('#pantryDiv');
+    var list = $('#accordion');
 
 	$(listButton).click(function(){
 	
