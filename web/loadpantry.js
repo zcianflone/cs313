@@ -21,7 +21,7 @@ $(function() {
 			
 			for (key in json){
 			
-				console.log(key);
+				console.log(json[key].name);
 			
 			}
 			
