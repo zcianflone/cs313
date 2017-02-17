@@ -27,10 +27,32 @@ $(function() {
 				var itemName = json[i].name;
 				
 				var date = 'None Specified';
+				var expStatus = 'list-group-item-info';
 				
 				if (json[i].expdate){
 				 date = new Date (json[i].expdate);
+				 
+				 var today = new Date;
+				 
+				 var dayDiff = (date.getTime() - today.getTime())/(1000*3600*24);
+				 
+				 console.log(date);
+				 console.log(today);
+				 console.log(dayDiff);
+				 
+				 if (dayDiff > 7){
+				 	expStatus = 'list-group-item-success';
+				 }
+				 else if (dayDiff > 0){
+				 	expStatus = 'list-group-item-warning';
+				 }
+				 else {
+				 	expStatus = 'list-group-item-danger';
+				 }
+				 
+				 
 				 date = date.toDateString();
+				 
 				}	
 				
 				
