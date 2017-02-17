@@ -37,7 +37,7 @@ $(function() {
 									"<h4 class=\"panel-title\">" +
 										"<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#" +
 											 json[i].name + "\">" + json[i].name + "</a>" +
-									 "<h4>" +
+									 "</h4>" +
 									 "</div>" +
 									 "<div id=\"" + json[i].name + "\"class=\"panel-collapse collapse in\">" +
 									   "<div class=\"panel-body\">Test</div></div></div>";						
