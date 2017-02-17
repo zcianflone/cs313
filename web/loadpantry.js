@@ -7,6 +7,8 @@ $(function() {
 
 	$(listButton).click(function(){
 	
+			$(list).val('');
+	
 	//$(list).append("<ul class=\"list-group\"><li class=\"list-group-item\">First item</li></ul>");
 	
 			// Submit the form using AJAX.
@@ -17,7 +19,7 @@ $(function() {
 		})
 		.done(function(response) {
 		
-			$(list).val('');
+		
 		
 			var json = JSON.parse(response);
 			
