@@ -21,8 +21,7 @@ $(function() {
 			
 			
 			
-			for (var i; i < json.length(); i++){
-				
+			for (var i=0; i < json.length(); i++){
 				console.log(json.[i].name);
 				}
 			
