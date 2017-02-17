@@ -26,7 +26,7 @@ $(function() {
 			for (i in json){
 				var itemName = json[i].name;
 				
-				var date = '';
+				var date = 'None Specified';
 				
 				if (json[i].expdate){
 				 date = new Date (json[i].expdate);
