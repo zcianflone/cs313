@@ -20,6 +20,8 @@ $(function() {
 			var json = JSON.parse(response);
 			
 			console.log(json[0].name);
+			console.log(json[1].name);
+			console.log(json[2].name);
 			
 			for (var i; i < 3; i++){
 				console.log(json[i].name);
