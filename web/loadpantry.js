@@ -19,12 +19,10 @@ $(function() {
 		
 			var json = JSON.parse(response);
 			
-			console.log(json.[0].name);
-			//console.log(json.[1].name);
-			//console.log(json.[3].name);
+			//console.log(json[0].name);
 			
-			for (var i=0; i < json.length(); i++){
-				//console.log(json.[i].name);
+			for (var i; i < json.length(); i++){
+				console.log(json[i].name);
 				}
 			
 			}
