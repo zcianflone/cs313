@@ -44,7 +44,7 @@ $(function() {
 									   		"<ul class=\"list-group\">" +
 									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
 									   			"<li class=\"list-group-item\">Expiration Date: " + json[i].expdate + "</li>"  +	
-									   			"</ul>								   
+									   			"</ul>" +								   
 									   "</div></div></div>";						
 				
 				
