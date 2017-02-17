@@ -51,7 +51,7 @@ $(function() {
 				 }
 				 
 				 
-				 date = date.toDateString();
+				 //date = date.toDateString();
 				 
 				}	
 				
