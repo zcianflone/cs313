@@ -26,10 +26,11 @@ $(function() {
 			for (i in json){
 				var itemName = json[i].name;
 				
-				var date;
+				var date = '';
 				
 				if (json[i].expdate){
 				 date = new Date (json[i].expdate);
+				 date = date.toDateString();
 				}	
 				
 				
@@ -49,7 +50,7 @@ $(function() {
 									   "<div class=\"panel-body\">"+
 									   		"<ul class=\"list-group\">" +
 									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
-									   			"<li class=\"list-group-item\">Expiration Date: " + date.toDateString() + "</li>"  +	
+									   			"<li class=\"list-group-item\">Expiration Date: " + date + "</li>"  +	
 									   			"</ul>" +								   
 									   "</div></div></div>";						
 				
