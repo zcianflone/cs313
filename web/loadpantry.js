@@ -72,7 +72,7 @@ $(function() {
 									   "<div class=\"panel-body\">"+
 									   		"<ul class=\"list-group\">" +
 									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
-									   			"<li class=\"list-group-item\"\"" + expStatus +"\">Expiration Date: " + date + "</li>"  +	
+									   			"<li class=\"list-group-item " + expStatus +"\">Expiration Date: " + date + "</li>"  +	
 									   			"</ul>" +								   
 									   "</div></div></div>";						
 				
