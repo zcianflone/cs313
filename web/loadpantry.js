@@ -30,7 +30,7 @@ $(function() {
 				var expStatus = 'list-group-item-info';
 				
 				if (json[i].expdate){
-				 date = new Date (json[i].expdate);
+				 date = json[i].expdate;
 				 
 				 var today = new Date;
 				 
