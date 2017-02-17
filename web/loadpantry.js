@@ -19,14 +19,11 @@ $(function() {
 		
 			var json = JSON.parse(response);
 			
-			console.log(json[0].name);
 			
-			for (key in json){
+			
+			for (var i; i < json.length(); i++){
 				
-				//console.log(key.name);
-				if (key == "name"){
-				var val = json[key];
-				console.log(val);
+				console.log(json.[i].name);
 				}
 			
 			}
