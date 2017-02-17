@@ -40,7 +40,10 @@ $(function() {
 									 "</h4>" +
 									 "</div>" +
 									 "<div id=\"" + json[i].id + "\"class=\"panel-collapse collapse\">" +
-									   "<div class=\"panel-body\">Test</div></div></div>";						
+									   "<div class=\"panel-body\">"+
+									   		"<ul class=\"list-group\">" +
+									   			"<li class=\"list-group-item\">Quantity:" + json[i].quantity + "</li>" +									   
+									   "</div></div></div>";						
 				
 				
 				
