@@ -39,7 +39,7 @@ $(function() {
 											 json[i].id + "\">" + json[i].name + "</a>" +
 									 "</h4>" +
 									 "</div>" +
-									 "<div id=\"" + json[i].id + "\"class=\"panel-collapse collapse in\">" +
+									 "<div id=\"" + json[i].id + "\"class=\"panel-collapse collapse\">" +
 									   "<div class=\"panel-body\">Test</div></div></div>";						
 				
 				
