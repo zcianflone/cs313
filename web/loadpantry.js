@@ -23,7 +23,7 @@ $(function() {
 			console.log(json[1].name);
 			console.log(json[2].name);
 			
-			for (var i; i < 3; i++){
+			for (var i=0; i < 3; i++){
 				console.log(json[i].name);
 				}
 			
