@@ -22,7 +22,9 @@ $(function() {
 			for (key in json){
 			
 				//console.log(json[key].name);
-				$(list).append("<li class=\"list-group-item\">".json[key].name . "</li></ul>");
+				var itemName = json[key].name;
+				var toAdd = "<li class=\"list-group-item\">". itemName . "</li></ul>";
+				$(list).append(toAdd);
 			}
 			
 			
