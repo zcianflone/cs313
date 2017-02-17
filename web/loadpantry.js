@@ -21,13 +21,10 @@ $(function() {
 			
 			for (key in json){
 			
-				console.log(json[key].name);
-			
+				//console.log(json[key].name);
+				$(list).append("<li class=\"list-group-item\">".json[key].name . "</li></ul>");
 			}
 			
-			/*console.log(json[0].name);
-			console.log(json[1].name);
-			console.log(json[2].name);*/
 			
 			
 			
