@@ -42,7 +42,9 @@ $(function() {
 									 "<div id=\"" + json[i].id + "\"class=\"panel-collapse collapse\">" +
 									   "<div class=\"panel-body\">"+
 									   		"<ul class=\"list-group\">" +
-									   			"<li class=\"list-group-item\">Quantity:" + json[i].quantity + "</li>" +									   
+									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
+									   			"<li class=\"list-group-item\">Expiration Date: " + json[i].expdate + "</li>"  +	
+									   			"</ul>								   
 									   "</div></div></div>";						
 				
 				
