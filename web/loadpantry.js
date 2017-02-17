@@ -3,7 +3,7 @@ $(function() {
 	var listButton = $('#pantryButton');
 
     // Get the list.
-    var list = $('#pantryUL');
+    var list = $('#pantryDiv');
 
 	$(listButton).click(function(){
 	
@@ -23,11 +23,28 @@ $(function() {
 		
 			var json = JSON.parse(response);
 			
-			for (key in json){
-			
-				//console.log(json[key].name);
-				var itemName = json[key].name;
-				var toAdd = "<li class=\"list-group-item\">" + itemName + "</li></ul>";
+			for (i in json){
+				var itemName = json[i].name;
+				
+				
+				
+				
+				
+				
+				//var toAdd = "<li class=\"list-group-item\">" + itemName + "</li></ul>";
+				var toAdd = "<div class=\"panel panel-default\">" +
+								"<div class=\"panel-heading\">" +
+									"<h4 class=\"panel-title\">" +
+										"<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#" +
+											 json[i].name + "\">" + json[i].name + "</a>" +
+									 "<h4>" +
+									 "</div>" +
+									 "<div id=\"" + json[i].name + "\"class=\"panel-collapse collapse in\">" +
+									   "<div class=\"panel-body\">Test</div></div></div>";						
+				
+				
+				
+				
 				$(list).append(toAdd);
 			}
 			
@@ -42,3 +59,19 @@ $(function() {
 
     });
 });
+
+
+/*<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Collapsible Group 1</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div> */
