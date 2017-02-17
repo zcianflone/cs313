@@ -51,7 +51,7 @@ $(function() {
 				 }
 				 
 				 
-				 //date = date.toDateString();
+				 date = date.toDateString();
 				 
 				}	
 				
@@ -73,7 +73,8 @@ $(function() {
 									   		"<ul class=\"list-group\">" +
 									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
 									   			"<li class=\"list-group-item " + expStatus +"\">Expiration Date: " + date + "</li>"  +	
-									   			"</ul>" +								   
+									   			"</ul>" +		
+									   			"<button type=\"button\" class=\"btn btn-danger\">Delete</button>"						   
 									   "</div></div></div>";						
 				
 				
