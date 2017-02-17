@@ -34,13 +34,13 @@ $(function() {
 				 
 				 var today = new Date;
 				 
-				 var dayDiff = (date.getTime() - today.getTime())/(1000*3600*24);
+				 //var dayDiff = (date.getTime() - today.getTime())/(1000*3600*24);
 				 
 				 console.log(date);
 				 console.log(today);
 				 console.log(dayDiff);
 				 
-				 if (dayDiff > 7){
+				/* if (dayDiff > 7){
 				 	expStatus = 'list-group-item-success';
 				 }
 				 else if (dayDiff > 0){
@@ -48,7 +48,7 @@ $(function() {
 				 }
 				 else {
 				 	expStatus = 'list-group-item-danger';
-				 }
+				 }*/
 				 
 				 
 				 //date = date.toDateString();
