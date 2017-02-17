@@ -17,6 +17,8 @@ $(function() {
 		})
 		.done(function(response) {
 		
+			$(list).val('');
+		
 			var json = JSON.parse(response);
 			
 			for (key in json){
