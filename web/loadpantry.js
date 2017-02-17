@@ -9,7 +9,7 @@ $(function() {
 	
 			$(list).empty();
 	
-	//$(list).append("<ul class=\"list-group\"><li class=\"list-group-item\">First item</li></ul>");
+
 	
 			// Submit the form using AJAX.
 		$.ajax({
@@ -34,8 +34,6 @@ $(function() {
 			
 			
 			
-			
-	
 		})
 		.fail(function(data) {
 	

@@ -8,8 +8,14 @@
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    
-     			$stmt = $db->prepare("SELECT * FROM item");
+    			$idquery = $db->prepare("SELECT id FROM person WHERE name = :name");
+    		    $idquery -> bindParam(':name', $_SESSION['username']);
+    		    $idquery -> execute();
+    		    $idresult =  $idquery -> fetch(PDO::FETCH_ASSOC);
+				$id = $idresult['id'];
+    	
+     			$stmt = $db->prepare("SELECT * FROM item WHERE person_id = :id");
+     			$stmt -> bindParam(':id', $id);
 				$stmt -> execute();
 				$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 				$jsonresult = json_encode($result);
