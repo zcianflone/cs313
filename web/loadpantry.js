@@ -109,6 +109,10 @@ $(function() {
     
     loadPantry();
 
+	var listButton = $('#pantryButton');
+	
+    // Get the list.
+    var list = $('#accordion');
 
 	$(listButton).click(function(){
 			
