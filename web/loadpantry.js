@@ -36,9 +36,11 @@ $(function() {
 				 
 				 var dayDiff = (date.getTime() - today.getTime())/(1000*3600*24);
 				 
-				 console.log(date);
-				 console.log(today);
-				 console.log(dayDiff);
+				 //console.log(date);
+				 //console.log(today);
+				 //console.log(dayDiff);
+				 
+				 console.log("hello");
 				 
 				 if (dayDiff > 7){
 				 	expStatus = 'list-group-item-success';
