@@ -76,7 +76,8 @@ $(function() {
 									   			"</ul>" +		
 									   			"<button type=\"button\" class=\"btn btn-danger\">Delete</button>"	+	
 									   			"<br>" +
-									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +				   
+									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +	
+									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +			   
 									   "</div></div></div>";						
 				
 				
