@@ -74,14 +74,9 @@ $(function() {
 									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
 									   			"<li class=\"list-group-item " + expStatus +"\">Expiration Date: " + date + "</li>"  +	
 									   			"</ul>" +		
-									   			"<div class=\"btn-toolbar\" role=\"toolbar\">" +
-									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
 									   			"<button type=\"button\" class=\"btn btn-danger\">Delete</button>"	+	
-									   			"</div>" +
-									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +	
-									   			"</div>" +			   
-									   			"</div>" +
+									   			"<br>" +
+									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +				   
 									   "</div></div></div>";						
 				
 				
