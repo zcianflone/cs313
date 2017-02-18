@@ -1,28 +1,12 @@
-$(function() {
+function loadPantry(){
+
 
 	var listButton = $('#pantryButton');
 	
 	
-	loadPantry();
-
+	
     // Get the list.
     var list = $('#accordion');
-
-	$(listButton).click(function(){
-			
-			
-			loadPantry();
-	
-
-	
-			// Submit the form using AJAX.
-		
-
-    });
-});
-
-
-function loadPantry(){
 
 	$(list).empty();
 	$.ajax({
@@ -115,4 +99,29 @@ function loadPantry(){
 
 
 }
+
+
+
+
+$(function() {
+
+	
+    
+    loadPantry();
+
+
+	$(listButton).click(function(){
+			
+			
+			loadPantry();
+	
+
+	
+			// Submit the form using AJAX.
+		
+
+    });
+});
+
+
 
