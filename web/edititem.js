@@ -2,7 +2,7 @@ $(function() {
     // Get the form.
     var form = $('#modalForm');
     
-    var subButton = $('#editButton');
+    var editButton = $('#editButton');
 
     // Get the messages div.
     var formMessages = $('#modalAlert');
