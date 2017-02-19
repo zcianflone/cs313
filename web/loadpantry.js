@@ -70,7 +70,7 @@ function loadPantry(){
 									   			"</ul>" +		
 									   			"<div class=\"btn-toolbar\" role=\"toolbar\">" +
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#myModalNorm\">Edit Item</button>" +
+									   			"<button type=\"button\" id=e\"" + json[i].id + "\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#myModalNorm\">Edit Item</button>" +
 									   			"</div>" +	
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
 									   			"<button type=\"button\" id=\"" + json[i].id + "\" class=\"btn btn-danger\">Delete</button>"	+
@@ -102,6 +102,26 @@ function loadPantry(){
 				$("#pantryAlert").append("<div class=\"alert alert-danger alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Successfully Deleted Item!</div>");
 				
 				loadPantry();
+
+    			});
+    			
+    			var editButton = $('.btn-info');
+			
+			//activating our new edit buttons	
+			$(editButton).click(function(){
+				
+				//removing superflous first char (needed to ensure unique html id)
+				var editID = this.id.substr(1);
+				
+				
+				//filling modal
+				
+				$("#modalItemName").val(json[editID].name);
+				$("#modalQuantity").val(json[editID].quantity);
+				$("#modalExpDate").val(json[editID].expdate);
+				
+				
+			
 
     			});
 			
