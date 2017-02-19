@@ -9,7 +9,7 @@ function loadPantry(){
     var list = $('#accordion');
 
 	$(list).empty();
-	$("#pantryAlert").empty();
+	
 	$.ajax({
 			type: 'POST',
 			url: "loadpantry.php"
@@ -121,9 +121,9 @@ function loadPantry(){
 $(function() {
 
 	
-    
+    $("#pantryAlert").empty();
     loadPantry();
-
+	
 	var listButton = $('#pantryButton');
 	
 	
@@ -133,9 +133,9 @@ $(function() {
 
 	$(listButton).click(function(){
 			
-			
+			$("#pantryAlert").empty();
 			loadPantry();
-		
+			
 
     });
     
