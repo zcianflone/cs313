@@ -81,6 +81,14 @@ function loadPantry(){
 				
 				
 				$(list).append(toAdd);
+				
+				   $(testButton).click(function(){
+			
+			
+			console.log("not crazy 2");
+		
+
+    			});
 			}
 			
 			
@@ -127,13 +135,7 @@ $(function() {
 
     });
     
-     $(testButton).click(function(){
-			
-			
-			console.log("not crazy 2");
-		
-
-    });
+  
     
     
   
