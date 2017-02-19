@@ -126,7 +126,7 @@ $(function() {
     });
     
     
-    $('.btn-danger').click(function(){
+    $('.btn-danger').on('click', 'button', function(e){
 			
 			
 			console.log("delete selected!");
