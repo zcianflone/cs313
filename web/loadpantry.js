@@ -113,7 +113,7 @@ function loadPantry(){
 				//removing superflous first char (needed to ensure unique html id)
 				var editID = this.id.substr(1);
 				
-				console.log(id);
+				console.log(this.id);
 				console.log(editID);
 				
 				
