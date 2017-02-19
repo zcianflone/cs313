@@ -105,6 +105,8 @@ $(function() {
 
 	var listButton = $('#pantryButton');
 	
+	var testButton = $('#test');
+	
     // Get the list.
     var list = $('#accordion');
 
@@ -125,14 +127,16 @@ $(function() {
 
     });
     
-    
-    $('#test').on('click', 'button', function(e){
+     $(testButton).click(function(){
 			
 			
-			console.log("delete selected!");
+			console.log("not crazy");
 		
 
     });
+    
+    
+  
 });
 
 
