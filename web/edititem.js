@@ -28,8 +28,10 @@ $(function() {
     		 data: formData
 		})
 		.done( function(response) { 
-	
+		
 		console.log(response);
+		loadPantry();
+		formMessages.append("<div class=\"alert alert-success alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Successfully Edited Item!</div>");
 	
 		})
 		.fail( function(response) {
