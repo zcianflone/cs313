@@ -85,12 +85,15 @@ function loadPantry(){
 
 			}
 			
-			var testButton = $('.btn-danger');
-				
-			$(testButton).click(function(){
+			var deleteButton = $('.btn-danger');
+			
+			//activating our new delete buttons	
+			$(deleteButton).click(function(){
 			
 			
-			console.log(this.id);
+			//console.log(this.id);
+			
+				deleteItem(this.id);
 		
 
     			});
