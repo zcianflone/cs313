@@ -112,10 +112,24 @@ $(function() {
 			
 			
 			loadPantry();
-	
+		
 
-	
-			// Submit the form using AJAX.
+    });
+    
+    
+    $(listButton).click(function(){
+			
+			
+			loadPantry();
+		
+
+    });
+    
+    
+    $('.btn-danger').click(function(){
+			
+			
+			console.log("delete selected!");
 		
 
     });
