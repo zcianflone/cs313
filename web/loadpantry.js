@@ -9,6 +9,7 @@ function loadPantry(){
     var list = $('#accordion');
 
 	$(list).empty();
+	$("#pantryAlert").empty();
 	$.ajax({
 			type: 'POST',
 			url: "loadpantry.php"
