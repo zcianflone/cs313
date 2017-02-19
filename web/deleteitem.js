@@ -8,7 +8,7 @@ console.log(id);
 
 	$.ajax({
 			type: 'POST',
-			url: "loadpantry.php"
+			url: "deleteitem.php",
 			data : id
 		})
 	.done( function(response) { 
