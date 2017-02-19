@@ -8,7 +8,12 @@
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    echo "call working";
+    $itemID = strip_tags(trim($_POST["modalID"]));
+    $name = strip_tags(trim($_POST["modalItemName"]));
+    $quantity = strip_tags(trim($_POST["modalQuantity"]));
+    $exp = strip_tags(trim($_POST["modalExpDate"]));
+    
+    echo "call working : " . $itemID ." ". $name ." ". $quantity ." ". $exp;
     
     
     } else {

@@ -110,6 +110,7 @@ function loadPantry(){
 			//activating our new edit button
 			$(editButton).click(function(){
 			
+				$('#modalAlert').empty();
 				$("#modalID").hide();
 				
 				//removing superflous first char (needed to ensure unique html id)
