@@ -1,4 +1,4 @@
-function deleteItem (var id){
+function deleteItem (id){
 
 console.log("Called deleteItem!");
 
