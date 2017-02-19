@@ -120,7 +120,7 @@ function loadPantry(){
 				//there's probably a more efficient way to do this, but I'll have to come back later
 				for (i in json){
 					if (json[i].id == editID){
-					
+					  $("#modalID").val(json[i].id);
 					  $("#modalItemName").val(json[i].name);
 					  $("#modalQuantity").val(json[i].quantity);
 					  $("#modalExpDate").val(json[i].expdate);
