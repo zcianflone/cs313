@@ -82,6 +82,8 @@ function loadPantry(){
 				
 				$(list).append(toAdd);
 				
+				var testButton = $('.btn-danger');
+				
 				   $(testButton).click(function(){
 			
 			
@@ -113,7 +115,7 @@ $(function() {
 
 	var listButton = $('#pantryButton');
 	
-	var testButton = $('.btn-danger');
+	
 	
     // Get the list.
     var list = $('#accordion');
