@@ -69,7 +69,7 @@ function loadPantry(){
 									   			"</ul>" +		
 									   			"<div class=\"btn-toolbar\" role=\"toolbar\">" +
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +
+									   			"<button type=\"button\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#myModalNorm\">Edit Item</button>" +
 									   			"</div>" +	
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
 									   			"<button type=\"button\" id=\"" + json[i].id + "\" class=\"btn btn-danger\">Delete</button>"	+
