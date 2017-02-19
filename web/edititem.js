@@ -1,29 +1,32 @@
 $(function() {
     // Get the form.
     var form = $('#modalForm');
+    
+    var subButton = $('#editButton');
 
     // Get the messages div.
     var formMessages = $('#modalAlert');
     
 
     // Set up an event listener for the modal form.
-$(form).submit(function(event) {
+	$(editButton).click(function(){
     // Stop the browser from submitting the form.
     
-    event.preventDefault();
-    console.log($("#modalQuantity").val());
-    
-    
-    
+
     if ( $("#modalQuantity").val() <= 0){
-    	event.preventDefault();
+    	
     	formMessages.append("<div class=\"alert alert-danger alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Quantity Must Be Greater Than Zero!</div>");	
+    	}
+    	
+    else {
+    	console.log("gtg");
+    	
     	}
     
     // Serialize the form data.
 var formData = $(form).serialize();
 
-var expDate = $('#addItemExp');
+
 
 // Submit the form using AJAX.
 /*$.ajax({
