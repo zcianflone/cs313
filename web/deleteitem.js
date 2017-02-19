@@ -9,7 +9,7 @@ console.log(id);
 	$.ajax({
 			type: 'POST',
 			url: "deleteitem.php",
-			data : id
+			data : {"id", id}
 		})
 	.done( function(response) { 
 	
