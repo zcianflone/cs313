@@ -130,7 +130,7 @@ $(function() {
      $(testButton).click(function(){
 			
 			
-			console.log("not crazy");
+			console.log("not crazy 2");
 		
 
     });
