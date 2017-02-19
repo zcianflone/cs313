@@ -94,6 +94,7 @@ function loadPantry(){
 			//console.log(this.id);
 			
 				deleteItem(this.id);
+				loadPantry();
 		
 
     			});
