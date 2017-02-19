@@ -107,8 +107,8 @@ function loadPantry(){
     			
     			var editButton = $('.btn-info');
 			
-			//activating our new edit buttons	
-			$(editButton).click(function(){
+			//activating our new edit button
+			$(editButton).click(function(json){
 				
 				//removing superflous first char (needed to ensure unique html id)
 				var editID = this.id.substr(1);
