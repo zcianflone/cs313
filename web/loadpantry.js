@@ -108,7 +108,7 @@ function loadPantry(){
     			var editButton = $('.btn-info');
 			
 			//activating our new edit button
-			$(editButton).click(function(json){
+			$(editButton).click(function(){
 				
 				//removing superflous first char (needed to ensure unique html id)
 				var editID = this.id.substr(1);
@@ -119,7 +119,7 @@ function loadPantry(){
 				
 				//filling modal
 				
-				console.log(json[editID].name);
+				console.log(json);
 				
 				/*$("#modalItemName").val(json[editID].name);
 				$("#modalQuantity").val(json[editID].quantity);
