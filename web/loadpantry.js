@@ -109,6 +109,8 @@ function loadPantry(){
 			
 			//activating our new edit button
 			$(editButton).click(function(){
+			
+				$("modalID").hide();
 				
 				//removing superflous first char (needed to ensure unique html id)
 				var editID = this.id.substr(1);
