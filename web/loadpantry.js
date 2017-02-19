@@ -119,15 +119,29 @@ function loadPantry(){
 				//filling modal
 				//there's probably a more efficient way to do this, but I'll have to come back later
 				for (i in json){
-					if ((json[i].id == editID){
-					  $('#modalID').val(json[i].id);
+					if (json[i].id == editID){
+					
 					  $("#modalItemName").val(json[i].name);
 					  $("#modalQuantity").val(json[i].quantity);
 					  $("#modalExpDate").val(json[i].expdate);
 				
 					}
+					
+				
 				}
 				
+				
+				//filling modal
+				
+		
+				
+				/*$("#modalItemName").val(json[editID].name);
+				$("#modalQuantity").val(json[editID].quantity);
+				$("#modalExpDate").val(json[editID].expdate);*/
+				
+				
+			
+
     			});
 			
 			
