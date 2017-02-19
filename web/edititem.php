@@ -13,10 +13,10 @@
     $quantity = strip_tags(trim($_POST["modalQuantity"]));
     $exp = strip_tags(trim($_POST["modalExpDate"]));
     
-    	$stmt = $db->prepare("UPDATE item SET name = :name WHERE id = :id");
+    	$stmt = $db->prepare("UPDATE item SET name = :name, quantity = :quantity WHERE id = :id");
 				$stmt->bindParam(':name', $name);
 				//$stmt->bindParam(':expdate', $exp);
-				//$stmt->bindParam(':quantity', $quantity);
+				$stmt->bindParam(':quantity', $quantity);
 				$stmt->bindParam(':id', $itemID );
 				$stmt -> execute();
     
