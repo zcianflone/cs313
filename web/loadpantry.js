@@ -82,17 +82,18 @@ function loadPantry(){
 				
 				$(list).append(toAdd);
 				
-				var testButton = $('.btn-danger');
+
+			}
+			
+			var testButton = $('.btn-danger');
 				
-				   $(testButton).click(function(){
+			$(testButton).click(function(){
 			
 			
-			console.log("not crazy 2");
+			console.log("not crazy 3");
 		
 
     			});
-			}
-			
 			
 			
 			
