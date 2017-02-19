@@ -11,8 +11,7 @@ function loadPantry(){
 	$(list).empty();
 	$.ajax({
 			type: 'POST',
-			url: "loadpantry.php",
-			//data: formData
+			url: "loadpantry.php"
 		})
 		.done(function(response) {
 		
@@ -33,11 +32,6 @@ function loadPantry(){
 				 
 				 var dayDiff = (date.getTime() - today.getTime())/(1000*3600*24);
 				 
-				 //console.log(date);
-				 //console.log(today);
-				 //console.log(dayDiff);
-				 
-				 console.log("hello");
 				 
 				 if (dayDiff > 7){
 				 	expStatus = 'list-group-item-success';
@@ -75,10 +69,10 @@ function loadPantry(){
 									   			"</ul>" +		
 									   			"<div class=\"btn-toolbar\" role=\"toolbar\">" +
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" class=\"btn btn-danger\">Delete</button>"	+
+									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +
 									   			"</div>" +	
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +
+									   			"<button type=\"button\" class=\"btn btn-danger\">Delete</button>"	+
 									   			"</div>" +					   
 									   "</div></div></div>";						
 				
@@ -110,6 +104,7 @@ $(function() {
     loadPantry();
 
 	var listButton = $('#pantryButton');
+	var 
 	
     // Get the list.
     var list = $('#accordion');
