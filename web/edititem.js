@@ -14,26 +14,38 @@ $(function() {
     
 
     if ( $("#modalQuantity").val() <= 0){
-    	
+    	formMessages.empty();
     	formMessages.append("<div class=\"alert alert-danger alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Quantity Must Be Greater Than Zero!</div>");	
     	}
     	
     else {
-    	console.log("gtg");
+    
+    	var formData = $(form).serialize();
+    	
+    	$.ajax({
+   			 type: 'POST',
+   			 url: $(form).attr('action'),
+    		 data: formData
+		})
+		.done( function(response) { 
+	
+		console.log(response);
+	
+		})
+		.fail( function(response) {
+	
+		});
+
+    	
     	
     	}
     
     // Serialize the form data.
-var formData = $(form).serialize();
+
 
 
 
 // Submit the form using AJAX.
-/*$.ajax({
-    type: 'POST',
-    url: $(form).attr('action'),
-    data: formData
-})*/
 
     
 });
