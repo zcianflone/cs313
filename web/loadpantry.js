@@ -85,7 +85,7 @@ function loadPantry(){
 
 			}
 			
-			var testButton = $('.btn-danger');
+			/*var testButton = $('.btn-danger');
 				
 			$(testButton).click(function(){
 			
@@ -93,7 +93,7 @@ function loadPantry(){
 			console.log("not crazy 3");
 		
 
-    			});
+    			});*/
 			
 			
 			
@@ -130,14 +130,7 @@ $(function() {
     });
     
     
-    $(listButton).click(function(){
-			
-			
-			loadPantry();
-		
 
-    });
-    
   
     
     
