@@ -105,7 +105,7 @@ $(function() {
 
 	var listButton = $('#pantryButton');
 	
-	var testButton = $('#test');
+	var testButton = $('.btn');
 	
     // Get the list.
     var list = $('#accordion');
