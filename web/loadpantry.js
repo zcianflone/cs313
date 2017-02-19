@@ -72,7 +72,7 @@ function loadPantry(){
 									   			"<button type=\"button\" class=\"btn btn-info\">Edit Item</button>" +
 									   			"</div>" +	
 									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" class=\"btn btn-danger\">Delete</button>"	+
+									   			"<button type=\"button\" id=\"" + json[i].id + "\" class=\"btn btn-danger\">Delete</button>"	+
 									   			"</div>" +					   
 									   "</div></div></div>";						
 				
@@ -90,7 +90,7 @@ function loadPantry(){
 			$(testButton).click(function(){
 			
 			
-			console.log("not crazy 3");
+			console.log(this.id);
 		
 
     			});
