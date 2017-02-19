@@ -10,6 +10,11 @@ $(function() {
 $(form).submit(function(event) {
     // Stop the browser from submitting the form.
     
+    event.preventDefault();
+    console.log($("#modalQuantity").val());
+    
+    
+    
     if ( $("#modalQuantity").val() <= 0){
     	event.preventDefault();
     	formMessages.append("<div class=\"alert alert-danger alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Quantity Must Be Greater Than Zero!</div>");	
