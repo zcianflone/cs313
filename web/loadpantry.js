@@ -96,7 +96,7 @@ function loadPantry(){
 				deleteItem(this.id);
 				
 				
-				$("#pantryAlert").append("<div class=\"alert alert-danger alert-dismissable fade in">Successfully Deleted Item!</div>");
+				$("#pantryAlert").append("<div class=\"alert alert-danger alert-dismissable fade in\">Successfully Deleted Item!</div>");
 				
 				loadPantry();
 
