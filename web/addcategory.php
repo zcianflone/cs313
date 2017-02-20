@@ -32,7 +32,7 @@
 			$stmt->bindParam(':person_id', $id );
 			$stmt -> execute();
 			
-			echo "Category Added!";
+			echo pg_last_error();
 			
 			
             //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
