@@ -54,7 +54,7 @@ $(function() {
 
 	$(catButton).click(function(){
 			
-			$(select).empty();
+			console.log("got it!");
 			loadCategory();
 			
 
