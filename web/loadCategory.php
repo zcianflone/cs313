@@ -14,7 +14,7 @@
     		    $idresult =  $idquery -> fetch(PDO::FETCH_ASSOC);
 				$id = $idresult['id'];
     	
-     			$stmt = $db->prepare("SELECT name FROM category WHERE person_id = :id");
+     			$stmt = $db->prepare("SELECT * FROM category WHERE person_id = :id");
      			$stmt -> bindParam(':id', $id);
 				$stmt -> execute();
 				$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
