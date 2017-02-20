@@ -9,21 +9,21 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     			$selectVal = $_POST['selectVal'];
-    			echo "PHP: " . $selectVal;
-    
-    			/*$idquery = $db->prepare("SELECT id FROM person WHERE name = :name");
+    		
+    			$idquery = $db->prepare("SELECT id FROM person WHERE name = :name");
     		    $idquery -> bindParam(':name', $_SESSION['username']);
     		    $idquery -> execute();
     		    $idresult =  $idquery -> fetch(PDO::FETCH_ASSOC);
 				$id = $idresult['id'];
     	
-     			$stmt = $db->prepare("SELECT * FROM item INNER JOIN itemcategory ON item.id = itemcategory.item_id WHERE itemcategory.category_id='10' AND itemcategory.person_id = '25'");
-     			$stmt -> bindParam(':id', $id);
+     			$stmt = $db->prepare("SELECT * FROM item INNER JOIN itemcategory ON item.id = itemcategory.item_id WHERE itemcategory.category_id=:category_id AND itemcategory.person_id = :person_id");
+     			$stmt -> bindParam(':person_id', $id);
+     			$stmt -> bindParam(':category_id', $selectVal);
 				$stmt -> execute();
 				$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 				$jsonresult = json_encode($result);
 				
-				echo $jsonresult;*/
+				echo $jsonresult;
     
     
     } else {

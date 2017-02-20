@@ -18,18 +18,18 @@ $(function() {
 		.done(function(response) {
 		
 		
-			console.log(response);
-		
-			/*var json = JSON.parse(response);
+			var json = JSON.parse(response);
 			
-			for (i in json){
+			console.log(json);
 			
-				var categoryName = json[i].name;
+			/*for (i in json){
+			
+				
 				
 				var toAdd = "<option value=" + json[i].id + ">" + categoryName + "</option>";
 				
 				$(select).append(toAdd);
-				*/
+			}*/
 
 			})
 	
