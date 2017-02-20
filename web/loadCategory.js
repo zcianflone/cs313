@@ -48,22 +48,6 @@ $(function() {
 	$(select).empty();
 	
 	loadCategory();
-	
-	var catButton = $('#addCatButton');
 
-
-	$(catButton).click(function(){
-			
-			console.log("got it!");
-			loadCategory();
-			
-
-    });
-    
-    
-
-  
-    
-    
   
 });
