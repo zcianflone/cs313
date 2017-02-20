@@ -10,7 +10,7 @@ $(function() {
 
 	$(select).change(function(){
 	
-		//console.log(select.val());
+		list.empty();
 		
 		var selectVal = select.val();
 	
