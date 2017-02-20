@@ -5,7 +5,7 @@ function loadCategory(){
 
 	$(select).empty();
 	
-	$(select).append("<option value=" "> </option>");
+	$(select).append("<option value=\" \"> </option>");
 	
 	$.ajax({
 			type: 'POST',
