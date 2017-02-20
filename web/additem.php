@@ -13,8 +13,6 @@
         $exp = strip_tags(trim($_POST["exp"]));
         $category = $_POST["category"];
         
-        echo $category;
-       
 
            // Set a 200 (okay) response code.
             http_response_code(200);
@@ -40,7 +38,7 @@
 				$stmt->bindParam(':person_id', $id );
 				$stmt -> execute();
 				
-				//echo "Item Added!" . $category;
+				echo "Item Added!" . $category;
             }
             //when the user doesn't enter an exp date
             else{
@@ -50,7 +48,13 @@
 				$stmt->bindParam(':person_id', $id);
 				$stmt -> execute();
 				
-				//echo "Item Added!" . $category;
+				echo "Item Added!" . $category;
+            }
+            
+            if ($category){
+            	$stmt = $db->prepare("INSERT INTO itemcategory(item_id, category_id) VALUES ((SELECT currval('item_id_seq')), :category_id)");
+            	$stmt->bindParam(':category_id', $category);
+            	$stmt -> execute();
             }
             
             
