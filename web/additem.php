@@ -11,6 +11,7 @@
         $name = strip_tags(trim($_POST["name"]));
         $quantity = strip_tags(trim($_POST["quantity"]));
         $exp = strip_tags(trim($_POST["exp"]));
+        $category = $_POST["category"];
        
 
            // Set a 200 (okay) response code.
@@ -37,7 +38,7 @@
 				$stmt->bindParam(':person_id', $id );
 				$stmt -> execute();
 				
-				echo "Item Added!";
+				echo "Item Added!" . $category;
             }
             //when the user doesn't enter an exp date
             else{
@@ -47,8 +48,10 @@
 				$stmt->bindParam(':person_id', $id);
 				$stmt -> execute();
 				
-				echo "Item Added!";
+				echo "Item Added!" . $category;
             }
+            
+            
            
             //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
 
