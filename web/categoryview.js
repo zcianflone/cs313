@@ -29,9 +29,9 @@ $(function() {
 				var toAdd = "<option value=" + json[i].id + ">" + categoryName + "</option>";
 				
 				$(select).append(toAdd);
-				
+				*/
 
-			}*/
+			}
 	
 	});
 
