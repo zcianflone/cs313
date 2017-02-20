@@ -10,9 +10,9 @@
     
     //ex: DELETE FROM item WHERE id = '30'
     
-    			//delete from category as well...and do that first
+    			//delete from category as well
 				$stmt = $db->prepare("DELETE FROM itemcategory WHERE item_id = :itemid");
-       			$stmt->bindParam(':itemid', $id);
+       			$stmt->bindParam(':itemid', $_POST["id"]);
        			$stmt -> execute();
     
     			$stmt = $db->prepare("DELETE FROM item WHERE id = :id");
