@@ -14,7 +14,7 @@
     		    $idresult =  $idquery -> fetch(PDO::FETCH_ASSOC);
 				$id = $idresult['id'];
     	
-     			$stmt = $db->prepare("SELECT * FROM item WHERE person_id = :id");
+     			$stmt = $db->prepare("SELECT * FROM item WHERE person_id = :id ORDER BY name");
      			$stmt -> bindParam(':id', $id);
 				$stmt -> execute();
 				$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
