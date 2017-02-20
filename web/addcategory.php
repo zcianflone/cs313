@@ -27,14 +27,12 @@
 			
 			$id = $result["id"];
 			
-			$stmt = $db->prepare("INSERT INTO category(name) VALUES (:name) WHERE person_id = :id");
+			$stmt = $db->prepare("INSERT INTO category(name, person_id) VALUES (:name, :id)");
 			$stmt->bindParam(':name', $name);
 			$stmt->bindParam(':person_id', $id );
 			$stmt -> execute();
 			
-			$error = pg_last_error();
-			
-			echo $error;
+			echo "Added New Category!";
 			
 			
             //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
