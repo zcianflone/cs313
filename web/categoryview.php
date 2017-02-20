@@ -8,7 +8,10 @@
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    			$idquery = $db->prepare("SELECT id FROM person WHERE name = :name");
+    			$selectVal = $_POST['selectVal'];
+    			echo "PHP: " . $selectVal;
+    
+    			/*$idquery = $db->prepare("SELECT id FROM person WHERE name = :name");
     		    $idquery -> bindParam(':name', $_SESSION['username']);
     		    $idquery -> execute();
     		    $idresult =  $idquery -> fetch(PDO::FETCH_ASSOC);
@@ -20,7 +23,7 @@
 				$result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 				$jsonresult = json_encode($result);
 				
-				echo $jsonresult;
+				echo $jsonresult;*/
     
     
     } else {
