@@ -10,14 +10,16 @@
     
     //ex: DELETE FROM item WHERE id = '30'
     
+    			//delete from category as well...and do that first
+				$stmt = $db->prepare("DELETE FROM itemcategory WHERE item_id = :itemid");
+       			$stmt->bindParam(':itemid', $id);
+       			$stmt -> execute();
+    
     			$stmt = $db->prepare("DELETE FROM item WHERE id = :id");
 				$stmt->bindParam(':id',  $_POST["id"]);
 				$stmt -> execute();
 				
-				//delete from category as well
-				$stmt = $db->prepare("DELETE FROM itemcategory WHERE item_id = :itemid");
-       			$stmt->bindParam(':itemid', $id);
-       			$stmt -> execute();
+		
     
     			
 				echo "deleted id: " . $_POST["id"];
