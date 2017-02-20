@@ -63,7 +63,7 @@
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a data-toggle="pill" href="#pantry" id="pantryButton">Pantry</a></li>
         <li><a data-toggle="pill" href="#addItem">Add Pantry Item</a></li>
-        <li><a data-toggle="pill" href="#recipes">Recipes</a></li>
+        <li><a data-toggle="pill" href="#createcategory">Create Category</a></li>
         <li><a data-toggle="pill" href="#createrecipe">Create Recipe</a></li>
       </ul><br>
     </div>
@@ -114,9 +114,14 @@
   
     </div>
     
-    <div id="recipes" class="tab-pane fade">
+    <div id="createcategory" class="tab-pane fade">
     
-    <p>Under Construction!</p>
+    	<form id="addCategory" action="addcategory.php" method="post">
+    		<br>
+    			Category Name:<br>
+    		<input id="categoryName" type="text" name="name">
+    		<button type="submit">Submit</button>
+		</form>
     
     </div>
     
@@ -136,9 +141,7 @@
             </div>
           </div>
 
-<footer class="container-fluid">
-  <p>Zac Cianflone</p>
-</footer>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
