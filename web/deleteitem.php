@@ -16,7 +16,7 @@
 				
 				//delete from category as well
 				$stmt = $db->prepare("DELETE FROM itemcategory WHERE item_id = :itemid");
-       			$stmt->bindParam(':itemid', $itemID);
+       			$stmt->bindParam(':itemid', $id);
        			$stmt -> execute();
     
     			
