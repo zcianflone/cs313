@@ -13,6 +13,11 @@
     			$stmt = $db->prepare("DELETE FROM item WHERE id = :id");
 				$stmt->bindParam(':id',  $_POST["id"]);
 				$stmt -> execute();
+				
+				//delete from category as well
+				$stmt = $db->prepare("DELETE FROM itemcategory WHERE item_id = :itemid");
+       			$stmt->bindParam(':itemid', $itemID);
+       			$stmt -> execute();
     
     			
 				echo "deleted id: " . $_POST["id"];
