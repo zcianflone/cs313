@@ -27,6 +27,7 @@ $.ajax({
 
     // Set the message text.
     $(formMessages).text(response);
+	loadCategory();
 
  
 })
