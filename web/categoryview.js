@@ -13,7 +13,7 @@ $(function() {
 		$.ajax({
 			type: 'POST',
 			url: "categoryview.php", 
-			data: selectVal
+			data: {"selectVal": selectVal}
 		})
 		.done(function(response) {
 		
