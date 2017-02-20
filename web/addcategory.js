@@ -1,9 +1,9 @@
 $(function() {
     // Get the form.
-    var form = $('#ajax-addItem');
+    var form = $('#addCategory');
 
     // Get the messages div.
-    var formMessages = $('#addItem-messages');
+    var formMessages = $('#addCategory-messages');
     
 
     // Set up an event listener for the addItem form.
@@ -14,7 +14,7 @@ $(form).submit(function(event) {
     // Serialize the form data.
 var formData = $(form).serialize();
 
-var expDate = $('#addItemExp');
+
 
 // Submit the form using AJAX.
 $.ajax({
@@ -23,18 +23,14 @@ $.ajax({
     data: formData
 })
 .done(function(response) {
-    // Make sure that the formMessages div has the 'success' class.
-    $(formMessages).removeClass('error');
-    $(formMessages).addClass('success');
+
 
     // Set the message text.
     $(formMessages).text(response);
 
+ 
 })
 .fail(function(data) {
-    // Make sure that the formMessages div has the 'error' class.
-    $(formMessages).removeClass('success');
-    $(formMessages).addClass('error');
 
     // Set the message text.
     if (data.responseText !== '') {
