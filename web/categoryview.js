@@ -73,13 +73,7 @@ $(function() {
 									   			"<li class=\"list-group-item\">Quantity: " + json[i].quantity + "</li>" +
 									   			"<li class=\"list-group-item " + expStatus +"\">Expiration Date: " + date + "</li>"  +	
 									   			"</ul>" +		
-									   			"<div class=\"btn-toolbar\" role=\"toolbar\">" +
-									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" id=\"e" + json[i].id + "\" class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#myModalNorm\">Edit Item</button>" +
-									   			"</div>" +	
-									   			"<div class=\"btn-group mr-2\" role=\"group\">" +
-									   			"<button type=\"button\" id=\"" + json[i].id + "\" class=\"btn btn-danger\">Delete</button>"	+
-									   			"</div>" +					   
+									   								   
 									   "</div></div></div>";						
 				
 				//test
@@ -91,58 +85,7 @@ $(function() {
 
 			}
 			
-			var deleteButton = $('.btn-danger');
-			
-			//activating our new delete buttons	
-			$(deleteButton).click(function(){
-			
-			
-			//console.log(this.id);
-			
-				deleteItem(this.id);
-				
-				$("#pantryAlert").empty();
-				
-				
-				$("#pantryAlert").append("<div class=\"alert alert-danger alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Successfully Deleted Item!</div>");
-				
-				loadPantry();
-
-    			});
-    			
-    			var editButton = $('.btn-info');
-			
-			//activating our new edit button
-			$(editButton).click(function(){
-			
-				$('#modalAlert').empty();
-				$("#modalID").hide();
-				
-				//removing superflous first char (needed to ensure unique html id)
-				var editID = this.id.substr(1);
-				
-				console.log(this.id);
-				console.log(editID);
-				
-				//filling modal
-				//there's probably a more efficient way to do this, but I'll have to come back later
-				for (i in json){
-					if (json[i].id == editID){
-					  $("#modalID").val(json[i].id);
-					  $("#modalItemName").val(json[i].name);
-					  $("#modalQuantity").val(json[i].quantity);
-					  $("#modalExpDate").val(json[i].expdate);
-				
-					}
-					
-				
-				}
-				
-				
-				
-			
-
-    			});
+	
 			
 			
 			
