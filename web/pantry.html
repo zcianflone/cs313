@@ -13,6 +13,7 @@
 	<script src="deleteitem.js"></script>
 	<script src="edititem.js"></script>
 	<script src='addcategory.js'></script>
+	<script src='loadCategory.js'></script>
   
   <style>
     .row.content {height: 2500px}
@@ -110,6 +111,10 @@
   		<input id="addItemExp" type="text" name="exp">
  		<br>
   		<br>
+  		<label for="addItemCategory">Category</label><br>
+  		<select id="addItemCategory" class="categorySelect">
+ 	
+		</select>
   		<button class="btn btn-default" type="submit">Submit</button>
 	</form> 
   
@@ -193,9 +198,10 @@
                       id="modalExpDate" name="modalExpDate"/>
                   </div>
                    <div class="form-group">
-                    <label for="modalItemName">Category</label>
-                      <input type="text" class="form-control"
-                      id="modalCategory" modal="modalCategory"/>
+                    <label for="modalCategory">Category</label>
+                     <select id="modalCategory" class="categorySelect">
+ 	
+					</select>
                   </div>
                
                   <button id="editButton" type="button" class="btn btn-default">Submit</button>
