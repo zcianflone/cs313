@@ -32,7 +32,9 @@
 			$stmt->bindParam(':person_id', $id );
 			$stmt -> execute();
 			
-			echo pg_last_error();
+			$error = pg_last_error();
+			
+			echo $error;
 			
 			
             //echo "Item: " . $name ." ". $quantity ." ". $exp . " ".$id; 
