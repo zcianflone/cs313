@@ -29,7 +29,7 @@
 			
 			$stmt = $db->prepare("INSERT INTO category(name, person_id) VALUES (:name, :id)");
 			$stmt->bindParam(':name', $name);
-			$stmt->bindParam(':person_id', $id );
+			$stmt->bindParam(':id', $id );
 			$stmt -> execute();
 			
 			echo "Added New Category!";
