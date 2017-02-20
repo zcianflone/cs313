@@ -52,7 +52,7 @@
             }
             
             if ($category){
-            	$stmt = $db->prepare("INSERT INTO itemcategory(item_id, category_id, person_id) VALUES ((SELECT currval('item_id_seq')), :category_id)");
+            	$stmt = $db->prepare("INSERT INTO itemcategory(item_id, category_id, person_id) VALUES ((SELECT currval('item_id_seq')), :category_id, :person_id)");
             	$stmt->bindParam(':category_id', $category);
             	$stmt->bindParam(':person_id', $id);
             	$stmt -> execute();
