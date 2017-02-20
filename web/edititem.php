@@ -22,8 +22,14 @@
 				$stmt -> execute();
     
 	
-    echo $category;
+     /*  if ($category){
+       			$stmt = $db
+            	$stmt = $db->prepare("INSERT INTO itemcategory(item_id, category_id) VALUES ((SELECT currval('item_id_seq')), :category_id)");
+            	$stmt->bindParam(':category_id', $category);
+            	$stmt -> execute();
+            }*/
 
+	echo pg_last_error($db);
     
     
     } else {

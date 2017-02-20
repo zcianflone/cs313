@@ -38,7 +38,7 @@
 				$stmt->bindParam(':person_id', $id );
 				$stmt -> execute();
 				
-				echo "Item Added!" . $category;
+				echo "Item Added!";
             }
             //when the user doesn't enter an exp date
             else{
@@ -48,12 +48,13 @@
 				$stmt->bindParam(':person_id', $id);
 				$stmt -> execute();
 				
-				echo "Item Added!" . $category;
+				echo "Item Added!";
             }
             
             if ($category){
-            	$stmt = $db->prepare("INSERT INTO itemcategory(item_id, category_id) VALUES ((SELECT currval('item_id_seq')), :category_id)");
+            	$stmt = $db->prepare("INSERT INTO itemcategory(item_id, category_id, person_id) VALUES ((SELECT currval('item_id_seq')), :category_id)");
             	$stmt->bindParam(':category_id', $category);
+            	$stmt->bindParam(':person_id', $id);
             	$stmt -> execute();
             }
             
