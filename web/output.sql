@@ -30,6 +30,20 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 SET search_path = public, pg_catalog;
 
+--
+-- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+CREATE SEQUENCE category_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE category_id_seq OWNER TO uswaoyvcwjxpvx;
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -39,19 +53,34 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE category (
-    id integer NOT NULL,
-    name text NOT NULL
+    id integer DEFAULT nextval('category_id_seq'::regclass) NOT NULL,
+    name text NOT NULL,
+    person_id integer NOT NULL
 );
 
 
 ALTER TABLE category OWNER TO uswaoyvcwjxpvx;
 
 --
+-- Name: ingredient_id_seq; Type: SEQUENCE; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+CREATE SEQUENCE ingredient_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE ingredient_id_seq OWNER TO uswaoyvcwjxpvx;
+
+--
 -- Name: ingredient; Type: TABLE; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
 CREATE TABLE ingredient (
-    id integer NOT NULL,
+    id integer DEFAULT nextval('ingredient_id_seq'::regclass) NOT NULL,
     name text NOT NULL,
     quantity text NOT NULL,
     unit text,
@@ -62,64 +91,109 @@ CREATE TABLE ingredient (
 ALTER TABLE ingredient OWNER TO uswaoyvcwjxpvx;
 
 --
+-- Name: item_id_seq; Type: SEQUENCE; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+CREATE SEQUENCE item_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE item_id_seq OWNER TO uswaoyvcwjxpvx;
+
+--
 -- Name: item; Type: TABLE; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
 CREATE TABLE item (
-    id integer NOT NULL,
+    id integer DEFAULT nextval('item_id_seq'::regclass) NOT NULL,
     name text NOT NULL,
     expdate date,
     quantity text NOT NULL,
-    pantry_id integer NOT NULL
+    person_id integer NOT NULL
 );
 
 
 ALTER TABLE item OWNER TO uswaoyvcwjxpvx;
 
 --
+-- Name: itemcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+CREATE SEQUENCE itemcategory_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE itemcategory_id_seq OWNER TO uswaoyvcwjxpvx;
+
+--
 -- Name: itemcategory; Type: TABLE; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
 CREATE TABLE itemcategory (
-    id integer NOT NULL,
+    id integer DEFAULT nextval('itemcategory_id_seq'::regclass) NOT NULL,
     item_id integer NOT NULL,
-    category_id integer NOT NULL
+    category_id integer NOT NULL,
+    person_id integer NOT NULL
 );
 
 
 ALTER TABLE itemcategory OWNER TO uswaoyvcwjxpvx;
 
 --
--- Name: pantry; Type: TABLE; Schema: public; Owner: uswaoyvcwjxpvx
+-- Name: person_id_seq; Type: SEQUENCE; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-CREATE TABLE pantry (
-    id integer NOT NULL,
-    name text NOT NULL,
-    person_id integer NOT NULL
-);
+CREATE SEQUENCE person_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
 
-ALTER TABLE pantry OWNER TO uswaoyvcwjxpvx;
+ALTER TABLE person_id_seq OWNER TO uswaoyvcwjxpvx;
 
 --
 -- Name: person; Type: TABLE; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
 CREATE TABLE person (
-    id integer NOT NULL,
-    name text NOT NULL
+    id integer DEFAULT nextval('person_id_seq'::regclass) NOT NULL,
+    name text NOT NULL,
+    password character varying(255) NOT NULL
 );
 
 
 ALTER TABLE person OWNER TO uswaoyvcwjxpvx;
 
 --
+-- Name: recipe_id_seq; Type: SEQUENCE; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+CREATE SEQUENCE recipe_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE recipe_id_seq OWNER TO uswaoyvcwjxpvx;
+
+--
 -- Name: recipe; Type: TABLE; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
 CREATE TABLE recipe (
-    id integer NOT NULL,
+    id integer DEFAULT nextval('recipe_id_seq'::regclass) NOT NULL,
     name text NOT NULL,
     directions text
 );
@@ -131,8 +205,22 @@ ALTER TABLE recipe OWNER TO uswaoyvcwjxpvx;
 -- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-COPY category (id, name) FROM stdin;
+COPY category (id, name, person_id) FROM stdin;
+10	vegetable	25
+11	Fruit	25
+12	Spices	25
+13	Peppers	25
+14	Junk Food	25
+15	Ice Cream	25
+16	Meats	25
 \.
+
+
+--
+-- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+SELECT pg_catalog.setval('category_id_seq', 16, true);
 
 
 --
@@ -144,35 +232,76 @@ COPY ingredient (id, name, quantity, unit, recipe_id) FROM stdin;
 
 
 --
+-- Name: ingredient_id_seq; Type: SEQUENCE SET; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+SELECT pg_catalog.setval('ingredient_id_seq', 1, false);
+
+
+--
 -- Data for Name: item; Type: TABLE DATA; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-COPY item (id, name, expdate, quantity, pantry_id) FROM stdin;
+COPY item (id, name, expdate, quantity, person_id) FROM stdin;
+62	chicken tender	\N	3	25
+46	Chex Mix	2017-03-19	1	25
+19	beef jerky	2018-12-01	1	26
+28	Club Mate	2017-10-14	2	25
+41	Grape	2017-03-19	1	25
+60	Green Bean	2017-03-01	1	25
+26	Peanut Butter	2018-12-01	1	26
+47	Hot Cheetos	2017-10-13	1	25
+63	Instant Ramen	2018-02-19	1	25
+59	Oreo	2016-12-12	3	25
+50	Chocolate Pudding	2016-12-12	12	25
 \.
+
+
+--
+-- Name: item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+SELECT pg_catalog.setval('item_id_seq', 65, true);
 
 
 --
 -- Data for Name: itemcategory; Type: TABLE DATA; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-COPY itemcategory (id, item_id, category_id) FROM stdin;
+COPY itemcategory (id, item_id, category_id, person_id) FROM stdin;
+17	46	14	25
+18	62	14	25
+19	28	14	25
+20	41	11	25
+21	60	10	25
+22	47	14	25
+23	63	14	25
+24	59	14	25
 \.
 
 
 --
--- Data for Name: pantry; Type: TABLE DATA; Schema: public; Owner: uswaoyvcwjxpvx
+-- Name: itemcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-COPY pantry (id, name, person_id) FROM stdin;
-\.
+SELECT pg_catalog.setval('itemcategory_id_seq', 26, true);
 
 
 --
 -- Data for Name: person; Type: TABLE DATA; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-COPY person (id, name) FROM stdin;
+COPY person (id, name, password) FROM stdin;
+25	zac	$2y$10$FzN31U.iJGhX7SINLXX3EOfxf854Ifxfuys/rQPTiBjGHqX63lUVy
+26	test	$2y$10$Uv.UmBs7VO/P/U9V.30zVO70ULHvLiDvqdMb/wSejC5s209w7wNuC
 \.
+
+
+--
+-- Name: person_id_seq; Type: SEQUENCE SET; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+SELECT pg_catalog.setval('person_id_seq', 26, true);
 
 
 --
@@ -181,6 +310,21 @@ COPY person (id, name) FROM stdin;
 
 COPY recipe (id, name, directions) FROM stdin;
 \.
+
+
+--
+-- Name: recipe_id_seq; Type: SEQUENCE SET; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+SELECT pg_catalog.setval('recipe_id_seq', 1, false);
+
+
+--
+-- Name: category category_name_key; Type: CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+ALTER TABLE ONLY category
+    ADD CONSTRAINT category_name_key UNIQUE (name);
 
 
 --
@@ -216,11 +360,11 @@ ALTER TABLE ONLY itemcategory
 
 
 --
--- Name: pantry pantry_pkey; Type: CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
+-- Name: person name_unique_con; Type: CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
-ALTER TABLE ONLY pantry
-    ADD CONSTRAINT pantry_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY person
+    ADD CONSTRAINT name_unique_con UNIQUE (name);
 
 
 --
@@ -240,6 +384,14 @@ ALTER TABLE ONLY recipe
 
 
 --
+-- Name: category category_person_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
+--
+
+ALTER TABLE ONLY category
+    ADD CONSTRAINT category_person_id_fkey FOREIGN KEY (person_id) REFERENCES person(id);
+
+
+--
 -- Name: ingredient ingredient_recipe_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
@@ -248,11 +400,11 @@ ALTER TABLE ONLY ingredient
 
 
 --
--- Name: item item_pantry_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
+-- Name: item item_person_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
 --
 
 ALTER TABLE ONLY item
-    ADD CONSTRAINT item_pantry_id_fkey FOREIGN KEY (pantry_id) REFERENCES pantry(id);
+    ADD CONSTRAINT item_person_id_fkey FOREIGN KEY (person_id) REFERENCES person(id);
 
 
 --
@@ -269,14 +421,6 @@ ALTER TABLE ONLY itemcategory
 
 ALTER TABLE ONLY itemcategory
     ADD CONSTRAINT itemcategory_item_id_fkey FOREIGN KEY (item_id) REFERENCES item(id);
-
-
---
--- Name: pantry pantry_person_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: uswaoyvcwjxpvx
---
-
-ALTER TABLE ONLY pantry
-    ADD CONSTRAINT pantry_person_id_fkey FOREIGN KEY (person_id) REFERENCES person(id);
 
 
 --
