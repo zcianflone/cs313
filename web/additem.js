@@ -16,6 +16,7 @@ $(function() {
 	 	$(itemquantity).val('');
 	 	$(itemexp).val('');
 	 	$(itemcat).val('');
+	 	$(formMessages).empty();
 	})
    
     
