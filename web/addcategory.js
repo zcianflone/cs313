@@ -5,6 +5,14 @@ $(function() {
     // Get the messages div.
     var formMessages = $('#addCategory-messages');
     
+    var addCatLink = $('#createcatview');
+    var catName = $('#categoryName');
+    
+    $(addCatLink).click(function(event){
+	 	$(catName).val('');
+	 	$(formMessages).empty();
+	})
+    
 
     // Set up an event listener for the addItem form.
 $(form).submit(function(event) {
@@ -26,7 +34,7 @@ $.ajax({
 
 
     // Set the message text.
-    $(formMessages).text(response);
+   $(formMessages).append("<div class=\"alert alert-success alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Successfully Added Category!</div>");
 	loadCategory();
 
  
