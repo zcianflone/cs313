@@ -42,7 +42,7 @@ $.ajax({
     $(formMessages).addClass('success');
 
     // Set the message text.
-    $(formMessages).text("<div class=\"alert alert-success alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Successfully Added Item!</div>");
+    $(formMessages).append("<div class=\"alert alert-success alert-dismissable fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>Successfully Added Item!</div>");
 
 })
 .fail(function(data) {
