@@ -4,7 +4,7 @@ $(function() {
 
 	
 	//grabbing sign out button
-  	var signOutButton = $('#signout');
+  	var signOutButton = $('#signoutlink');
   	
 
 
