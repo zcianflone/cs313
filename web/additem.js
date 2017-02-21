@@ -10,7 +10,7 @@ $(function() {
 
 	$(addpantryitemview).click(function(event){
 	 	$(form).empty();
-	}
+	})
    
     
 
