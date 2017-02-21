@@ -1,9 +1,17 @@
 $(function() {
     // Get the form.
     var form = $('#ajax-addItem');
+    
+    var additemlink = $('#addpantryitemview');
 
     // Get the messages div.
     var formMessages = $('#addItem-messages');
+    
+
+	$(addpantryitemview).click(function(event){
+	 	$(form).empty();
+	}
+   
     
 
     // Set up an event listener for the addItem form.
