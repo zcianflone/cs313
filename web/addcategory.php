@@ -17,7 +17,7 @@
             http_response_code(200);
             
     
-        	
+        	//grabbing user id from db
         	$idstmt = $db->prepare("SELECT * FROM person WHERE name = :name");
 			$idstmt->bindParam(':name', $_SESSION['username']);
 			$idstmt -> execute();
@@ -27,6 +27,7 @@
 			
 			$id = $result["id"];
 			
+			//inserting new item into db with the user id we just got
 			$stmt = $db->prepare("INSERT INTO category(name, person_id) VALUES (:name, :id)");
 			$stmt->bindParam(':name', $name);
 			$stmt->bindParam(':id', $id );
