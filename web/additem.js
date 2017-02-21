@@ -3,13 +3,19 @@ $(function() {
     var form = $('#ajax-addItem');
     
     var additemlink = $('#addpantryitemview');
+    var itemname =$('#addItemName');
+     var itemquantity =$('#addItemQuantity');
+     var itemexp = $('#addItemQuantity');
+     var itemcat = $('#addItemCategory');
 
     // Get the messages div.
     var formMessages = $('#addItem-messages');
     
-
 	$(addpantryitemview).click(function(event){
-	 	$(form).empty();
+	 	$(itemname).val('');
+	 	$(itemquantity).val('');
+	 	$(itemexp).val('');
+	 	$(itemcat).val('');
 	})
    
     
