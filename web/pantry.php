@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="loadpantry.js"></script>
+	<script src="additem.js"></script>
+	<script src="deleteitem.js"></script>
+	<script src="edititem.js"></script>
+	<script src='addcategory.js'></script>
+	<script src='loadCategory.js'></script>
+	<script src='categoryview.js'></script>
   
   <style>
     .row.content {height: 2500px}
@@ -31,6 +39,19 @@
         padding: 15px;
       }
       .row.content {height: auto;} 
+      
+      .modal-body .form-horizontal .col-sm-2,
+	.modal-body .form-horizontal .col-sm-10 {
+    		width: 100%
+		}
+
+	.modal-body .form-horizontal .control-label {
+    	text-align: left;
+		}
+		.modal-body .form-horizontal .col-sm-offset-2 {
+   		 margin-left: 15px;
+	}
+      
     }
   </style>
 </head>
@@ -41,12 +62,13 @@
   <div class="row content">
     <div class="col-sm-3 sidenav">
     <br> 
-      <h3>Pantry Pro</h3>
+      <h2>Pantry Pro</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a data-toggle="pill" href="#pantry">Pantry</a></li>
-        <li><a data-toggle="pill" href="#additem">Add Pantry Item</a></li>
-        <li><a data-toggle="pill" href="#recipes">Recipes</a></li>
-        <li><a data-toggle="pill" href="#createrecipe">Create Recipe</a></li>
+        <li class="active"><a data-toggle="pill" href="#pantry" id="pantryButton">Pantry</a></li>
+        <li><a data-toggle="pill" href="#addItem">Add Pantry Item</a></li>
+        <li><a data-toggle="pill" href="#createcategory">Create Category</a></li>
+        <li><a data-toggle="pill" href="#categoryview">Category View</a></li>
+          <li><a data-toggle="pill" href="#signout">Sign Out</a></li>
       </ul><br>
     </div>
 
@@ -54,88 +76,97 @@
     <div class="tab-content">
     
  	<div id="pantry" class="tab-pane fade in active">
-  		<h2>All Pantry Items</h2>
-  		<div class="list-group">
-    
-    <?php
+  		<h3>All Pantry Items</h3>
+  		<div id="pantryAlert"></div>
+  		<div id="pantryDiv" class="list-group">
+    	
+    		
+    		<div class="panel-group" id="accordion">
+  			<!--JS inserts pantry here -->
+  
+			</div>
 
-	$dbUrl = getenv('DATABASE_URL');
-
-	$dbopts = parse_url($dbUrl);
-
-	$dbHost = $dbopts["host"];
-	$dbPort = $dbopts["port"];
-	$dbUser = $dbopts["user"];
-	$dbPassword = $dbopts["pass"];
-	$dbName = ltrim($dbopts["path"],'/');
-
-	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 	
+	 	</div>
 	
 	
 
-	foreach ($db->query('SELECT name FROM item') as $row)
-	{
-	
-		//makes each entry into a link that navigates to details page
-		$link = str_replace(' ','_', $row['name']);
-		
-		
-		echo "<a href=\"pantryitem.php?itemName=". $link ."\" class=\"list-group-item\">".$row['name']. "</a>";
-	}
-	?>
-	
-	 </div>
-	
-	
-	
-	<form action="action_page.php" method="post">
-  		<br>
-  		<br>
- 		 Search:<br>
-  		<input type="text" name="desireditem">
- 		<br>
-  		<br>
-  		<input type="submit" value="Submit">
-	</form> 
-	
 	</div>
 	
-	<div id="additem" class="tab-pane fade">
+	<div id="addItem" class="tab-pane fade">
 	
 		<h3>Add New Item</h3>
 		<hr>
-		<h4>Under Construction!</h4>
+		<div id="addItem-messages"></div>
     	
-    	<form action="" method="post">
+    	<form id="ajax-addItem" action="additem.php" method="post">
   		<br>
- 		 Name:<br>
-  		<input type="text" name="name">
+ 		 <label for="addItemName">Name</label><br>
+  		<input id="addItemName" type="text" name="name">
  		<br>
   		<br>
-  		Quantity:<br>
-  		<input type="text" name="quantity">
+  		<label for="addItemQuantity">Quantity</label><br>
+  		<input id="addItemQuantity" type="text" name="quantity">
  		<br>
   		<br>
-  		Expiration Date:<br>
-  		<input type="text" name="quantity">
+  		<label for="addItemExp">Expiration Date</label><br>
+  		<input id="addItemExp" type="text" name="exp">
  		<br>
   		<br>
-  		<input type="submit" value="Submit">
+  		<label for="addItemCategory">Category</label><br>
+  		<select name="category" id="addItemCategory" class="categorySelect">
+ 	
+		</select>
+		<br>
+		<br>
+  		<button class="btn btn-default" type="submit">Submit</button>
 	</form> 
   
     </div>
     
-    <div id="recipes" class="tab-pane fade">
+    <div id="createcategory" class="tab-pane fade">
     
-    <p>Under Construction!</p>
+    	<h3>Create New Category</h3>
+		<hr>
+		<div id="addCategory-messages"></div>
+    
+    	<form id="addCategory" action="addcategory.php" method="post">
+    		<br>
+    			<label for="categoryName">Category</label><br>
+    		<input id="categoryName" type="text" name="name">
+    		<br>
+    		<br>
+    		<button id="addCatButton" class="btn btn-default" type="submit">Submit</button>
+		</form>
     
     </div>
     
-    <div id="createrecipe" class="tab-pane fade">
+    <div id="categoryview" class="tab-pane fade">
     
-    <p>Under Construction!</p>
+    <br>
+    <br>
     
+    <select name="category" id="categoryspinner" class="categorySelect">
+ 	
+	</select>
+	
+	<hr>
+	
+		<div class="panel-group categoryaccordion" id="accordion">
+  			<!--JS inserts pantry here -->
+  
+			</div>
+    
+    </div>
+    
+    <div id="signout" class="tab-pane fade">
+    
+    <?php
+    	session_start();
+    	unset($_SESSION['username']);
+    	header("Location: loginpantry.html");
+    	echo "hi";
+    ?>
     </div>
     
   	</div>
@@ -148,11 +179,67 @@
             </div>
           </div>
 
-<footer class="container-fluid">
-  <p>Zac Cianflone</p>
-</footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Edit Item
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+            
+            	<div id="modalAlert"></div>
+                
+                <form id="modalForm" action="edititem.php" method="post" role="form">
+                 <div class="form-group">
+                      <input type="text" class="form-control"
+                          id="modalID" name="modalID" />
+                  </div>
+                  <div class="form-group">
+                    <label for="modalItemName">Item Name</label>
+                      <input type="text" class="form-control"
+                      id="modalItemName" name="modalItemName"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="modalQuantity">Quantity</label>
+                      <input type="text" class="form-control"
+                          id="modalQuantity" name="modalQuantity" />
+                  </div>
+                   <div class="form-group">
+                    <label for="modalExpDate">Expiration Date</label>
+                      <input type="text" class="form-control"
+                      id="modalExpDate" name="modalExpDate"/>
+                  </div>
+                   <div class="form-group">
+                    <label for="modalCategory">Category</label><br>
+                     <select name="category" id="modalCategory" class="categorySelect">
+ 	
+					</select>
+                  </div>
+               
+                  <button id="editButton" type="button" class="btn btn-default">Submit</button>
+                </form>
+                
+                
+            </div>
+        
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
-
- 

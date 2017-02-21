@@ -19,7 +19,7 @@ $.ajax({
     url: $(form).attr('action'),
     data: formData,
     success: function(data) { 
-    			if (data.includes("pantry.html"))
+    			if (data.includes("pantry.php"))
     			{
                 	window.location.href =  data;
                 }
